@@ -7,7 +7,16 @@
   function random(seed){
     if(!Number.isInteger(seed)||seed<0||seed>0xffffffff)throw new RangeError('Seed must be an unsigned 32-bit integer');
     let state=seed;
-    const value=()=>{state=(Math.imul(1664525,state)+1013904223)>>>0;return state/4294967296};
+    // Mix the output separately from the state (Mulberry32). League generation
+    // uses outputs as team seeds; exposing an LCG's state made those teams
+    // start at adjacent points in the same stream and repeat player profiles.
+    const value=()=>{
+      state=(state+0x6d2b79f5)>>>0;
+      let value=state;
+      value=Math.imul(value^(value>>>15),value|1);
+      value^=value+Math.imul(value^(value>>>7),value|61);
+      return ((value^(value>>>14))>>>0)/4294967296;
+    };
     return {value,int:(lo,hi)=>hi<=lo?lo:lo+Math.floor(value()*(hi-lo))};
   }
   const pick=(items,rng)=>items[rng.int(0,items.length)];
