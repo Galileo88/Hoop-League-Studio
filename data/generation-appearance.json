@@ -1,0 +1,1483 @@
+{
+  "source": "Hoop Land 1.09.75 serialized Colors and HairStyle components",
+  "hair": [
+    {
+      "id": "0092",
+      "gender": 0,
+      "type": 3,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0112",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0073",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0086",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0041",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0133",
+      "gender": 0,
+      "type": 1,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0067",
+      "gender": 0,
+      "type": 4,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0102",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0111",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0028",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0153",
+      "gender": 1,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0081",
+      "gender": 1,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0143",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0084",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0045",
+      "gender": 0,
+      "type": 3,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0010",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0063",
+      "gender": 0,
+      "type": 3,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0013",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0089",
+      "gender": 0,
+      "type": 2,
+      "age": 1,
+      "rarity": 0
+    },
+    {
+      "id": "0164",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0155",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0091",
+      "gender": 0,
+      "type": 2,
+      "age": 1,
+      "rarity": 0
+    },
+    {
+      "id": "0004",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0116",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0071",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0128",
+      "gender": 1,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0039",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 0
+    },
+    {
+      "id": "0057",
+      "gender": 0,
+      "type": 1,
+      "age": 2,
+      "rarity": 2
+    },
+    {
+      "id": "0166",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0072",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0150",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0162",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0105",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0044",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0127",
+      "gender": 1,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0026",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0149",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0156",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0001",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0009",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0108",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0115",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0048",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0042",
+      "gender": 2,
+      "type": 3,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0165",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0141",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0125",
+      "gender": 1,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0016",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0098",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0158",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0167",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0146",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0169",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0144",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0051",
+      "gender": 2,
+      "type": 3,
+      "age": 2,
+      "rarity": 1
+    },
+    {
+      "id": "0114",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0113",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0076",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0050",
+      "gender": 0,
+      "type": 3,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0062",
+      "gender": 0,
+      "type": 4,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0040",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 1
+    },
+    {
+      "id": "0011",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0036",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0024",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0022",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0088",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0034",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0103",
+      "gender": 2,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0046",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0119",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0161",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0075",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0065",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0055",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0061",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0017",
+      "gender": 0,
+      "type": 3,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0085",
+      "gender": 0,
+      "type": 1,
+      "age": 1,
+      "rarity": 0
+    },
+    {
+      "id": "0135",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0059",
+      "gender": 0,
+      "type": 5,
+      "age": 2,
+      "rarity": 1
+    },
+    {
+      "id": "0053",
+      "gender": 2,
+      "type": 3,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0027",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0132",
+      "gender": 0,
+      "type": 2,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0139",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0058",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 2
+    },
+    {
+      "id": "0077",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0030",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0101",
+      "gender": 0,
+      "type": 3,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0043",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 1
+    },
+    {
+      "id": "0025",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0029",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0134",
+      "gender": 2,
+      "type": 1,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0008",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0109",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0014",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0012",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0023",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0152",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0080",
+      "gender": 1,
+      "type": 1,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0007",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0079",
+      "gender": 2,
+      "type": 1,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0021",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0035",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0137",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0032",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0147",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0121",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0068",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 0
+    },
+    {
+      "id": "0095",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0145",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0110",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0107",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0003",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0097",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0124",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0100",
+      "gender": 0,
+      "type": 3,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0069",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 1
+    },
+    {
+      "id": "0120",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0074",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0140",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0136",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0131",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 0
+    },
+    {
+      "id": "0002",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0094",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0148",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0047",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0060",
+      "gender": 0,
+      "type": 1,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0160",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0070",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0104",
+      "gender": 2,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0064",
+      "gender": 0,
+      "type": 3,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0049",
+      "gender": 0,
+      "type": 3,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0020",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0093",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0019",
+      "gender": 2,
+      "type": 1,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0129",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0056",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0038",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0006",
+      "gender": 2,
+      "type": 1,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0157",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0151",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0087",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0099",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0106",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0083",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0159",
+      "gender": 1,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0117",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0082",
+      "gender": 1,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0078",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0123",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0138",
+      "gender": 2,
+      "type": 5,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0052",
+      "gender": 2,
+      "type": 3,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0015",
+      "gender": 0,
+      "type": 3,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0168",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0090",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0126",
+      "gender": 1,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0163",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0018",
+      "gender": 2,
+      "type": 2,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0118",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0031",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0054",
+      "gender": 0,
+      "type": 3,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0122",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0096",
+      "gender": 0,
+      "type": 2,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0142",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0154",
+      "gender": 1,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0005",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0033",
+      "gender": 0,
+      "type": 1,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0170",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0066",
+      "gender": 0,
+      "type": 4,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0130",
+      "gender": 2,
+      "type": 4,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0037",
+      "gender": 0,
+      "type": 4,
+      "age": 0,
+      "rarity": 1
+    }
+  ],
+  "facialHair": [
+    {
+      "id": "0028",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0009",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 1
+    },
+    {
+      "id": "0030",
+      "gender": 0,
+      "type": 5,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0016",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0027",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0029",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0003",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 0
+    },
+    {
+      "id": "0001",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0015",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0004",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 1
+    },
+    {
+      "id": "0022",
+      "gender": 0,
+      "type": 5,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0017",
+      "gender": 0,
+      "type": 5,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0014",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 2
+    },
+    {
+      "id": "0018",
+      "gender": 0,
+      "type": 5,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0019",
+      "gender": 0,
+      "type": 5,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0025",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0020",
+      "gender": 0,
+      "type": 5,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0002",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0006",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 1
+    },
+    {
+      "id": "0024",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 1
+    },
+    {
+      "id": "0011",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 1
+    },
+    {
+      "id": "0007",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0031",
+      "gender": 0,
+      "type": 5,
+      "age": 2,
+      "rarity": 1
+    },
+    {
+      "id": "0021",
+      "gender": 0,
+      "type": 5,
+      "age": 2,
+      "rarity": 0
+    },
+    {
+      "id": "0013",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 1
+    },
+    {
+      "id": "0005",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    },
+    {
+      "id": "0012",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 0
+    },
+    {
+      "id": "0023",
+      "gender": 0,
+      "type": 5,
+      "age": 2,
+      "rarity": 1
+    },
+    {
+      "id": "0010",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 1
+    },
+    {
+      "id": "0008",
+      "gender": 0,
+      "type": 5,
+      "age": 1,
+      "rarity": 1
+    },
+    {
+      "id": "0026",
+      "gender": 0,
+      "type": 5,
+      "age": 0,
+      "rarity": 0
+    }
+  ],
+  "colors": {
+    "skin": [
+      "F4CCA1",
+      "EEA160",
+      "BF7958",
+      "A05B53",
+      "7A444A",
+      "5E3643",
+      "472D3C"
+    ],
+    "eyes": [
+      "141020",
+      "262539",
+      "472D3C",
+      "5E3643",
+      "7A444A",
+      "A05B53",
+      "539A4F",
+      "306943",
+      "1C453B",
+      "102737",
+      "10316B",
+      "154FA1",
+      "1C84CB",
+      "26B3EF"
+    ],
+    "accessories": [
+      "FFFFFF",
+      "DBE0E7",
+      "A3ACBD",
+      "67718A",
+      "4E5470",
+      "393B55",
+      "262539",
+      "7ECD62",
+      "539A4F",
+      "306943",
+      "1C453B",
+      "102737",
+      "10316B",
+      "154FA1",
+      "1C84CB",
+      "26B3EF",
+      "4DF3FB",
+      "E37033",
+      "F5AB44",
+      "FADE73",
+      "FC989C",
+      "EB545C",
+      "C22E3A",
+      "77202D",
+      "351528",
+      "4C2551",
+      "7E3E85",
+      "B361B1",
+      "E18FD5"
+    ],
+    "hair": [
+      "141020",
+      "262539",
+      "46211F",
+      "623530",
+      "97432A",
+      "945542",
+      "C58158",
+      "E5AE78",
+      "F0D2AF"
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "name": "hoop-league-studio",
+  "version": "1.0.0",
+  "description": "A comprehensive league editor for Hoop Land",
+  "author": "Hoop League Studio",
+  "private": true,
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "build:msi": "node scripts/build-release.cjs && electron-builder --win msi --x64 --publish never",
+    "build:setup": "powershell -NoProfile -ExecutionPolicy Bypass -File desktop/build-setup.ps1",
+    "build:mac": "node scripts/build-release.cjs && electron-builder --mac dmg --universal --publish never",
+    "build:web": "node scripts/build-release.cjs"
+  },
+  "devDependencies": {
+    "electron": "44.5.1",
+    "electron-builder": "26.15.3",
+    "esbuild": "0.25.10"
+  },
+  "build": {
+    "appId": "com.hoopleaguestudio.desktop",
+    "productName": "Hoop League Studio",
+    "directories": {
+      "output": "dist",
+      "app": "dist/desktop-app"
+    },
+    "files": [
+      "desktop/main.cjs",
+      "app.html",
+      "manifest.webmanifest",
+      "sw.js",
+      "assets/**/*",
+      "data/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "msi",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "desktop/icon.ico",
+      "signExecutable": false
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
+      "icon": "assets/images/icons/icon-512.png",
+      "category": "public.app-category.sports",
+      "artifactName": "HoopLeagueStudio_v${version}_${arch}.dmg",
+      "hardenedRuntime": true
+    },
+    "dmg": {
+      "background": "desktop/mac/dmg-background.png",
+      "window": {
+        "width": 600,
+        "height": 420
+      },
+      "iconSize": 88,
+      "iconTextSize": 13,
+      "title": "Hoop League Studio ${version}",
+      "contents": [
+        {
+          "x": 155,
+          "y": 235,
+          "type": "file"
+        },
+        {
+          "x": 445,
+          "y": 235,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "msi": {
+      "artifactName": "Hoop-League-Studio-${version}-${arch}.msi",
+      "oneClick": false,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "runAfterFinish": false,
+      "upgradeCode": "2A78BDB4-3F77-4C48-8D95-E482D9E38C26",
+      "additionalLightArgs": [
+        "-sval"
+      ]
+    }
+  }
+}

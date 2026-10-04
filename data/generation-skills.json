@@ -1,0 +1,269 @@
+{
+  "dllSha256": "44b2fd4ebd95c90f3684e34411bd7ae71255b964a7cf1b337e4096313c1fc2ed",
+  "skills": [
+    {
+      "category": 0,
+      "id": "HIG",
+      "name": "Highlight Reel",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "",
+      "minAction": 0.0,
+      "shouldScale": true,
+      "cost": 1
+    },
+    {
+      "category": 0,
+      "id": "CRA",
+      "name": "Crafty",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "Reverse or Contact Layups",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 2
+    },
+    {
+      "category": 0,
+      "id": "SOF",
+      "name": "Soft Touch",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "Hookshots",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 2
+    },
+    {
+      "category": 0,
+      "id": "TEA",
+      "name": "Tear Dropper",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "Floaters",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 2
+    },
+    {
+      "category": 0,
+      "id": "BUL",
+      "name": "Bully",
+      "attribute": 3,
+      "minRating": 16,
+      "actionRequirement": "Opponent Falling from Backdowns",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 3
+    },
+    {
+      "category": 0,
+      "id": "DUN",
+      "name": "Dunk Artist",
+      "attribute": 2,
+      "minRating": 16,
+      "actionRequirement": "Reverse or 360 Dunks",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 3
+    },
+    {
+      "category": 1,
+      "id": "SPA",
+      "name": "Spark Plug",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "",
+      "minAction": 0.0,
+      "shouldScale": true,
+      "cost": 1
+    },
+    {
+      "category": 1,
+      "id": "CLU",
+      "name": "Clutch Gene",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "Jumpshots or Free Throws in Clutch Situations",
+      "minAction": 0.4000000059604645,
+      "shouldScale": false,
+      "cost": 2
+    },
+    {
+      "category": 1,
+      "id": "SPO",
+      "name": "Spot Up",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "Jumpshots after a Pass",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 2
+    },
+    {
+      "category": 1,
+      "id": "VOL",
+      "name": "Volume Shooter",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "Jumpshots when Fatigued",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 2
+    },
+    {
+      "category": 1,
+      "id": "LIM",
+      "name": "Limitless",
+      "attribute": 5,
+      "minRating": 16,
+      "actionRequirement": "Three Pointers from 25 feet or more",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 3
+    },
+    {
+      "category": 1,
+      "id": "UNF",
+      "name": "Unfazed",
+      "attribute": 4,
+      "minRating": 16,
+      "actionRequirement": "Contested Mid Range Shots",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 3
+    },
+    {
+      "category": 2,
+      "id": "DIM",
+      "name": "Dimer",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "",
+      "minAction": 0.0,
+      "shouldScale": true,
+      "cost": 1
+    },
+    {
+      "category": 2,
+      "id": "CHE",
+      "name": "Chef",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "Teammate Catches Fire after an Assist",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 2
+    },
+    {
+      "category": 2,
+      "id": "CLE",
+      "name": "Cleanup Crew",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "Field Goals after an Offensive Rebound",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 2
+    },
+    {
+      "category": 2,
+      "id": "STE",
+      "name": "Step Dancer",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "Jumpshots after a Step",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 2
+    },
+    {
+      "category": 2,
+      "id": "FOO",
+      "name": "Foot Surgeon",
+      "attribute": 7,
+      "minRating": 16,
+      "actionRequirement": "Ankle Breakers",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 3
+    },
+    {
+      "category": 2,
+      "id": "HOT",
+      "name": "Hot Potato",
+      "attribute": 8,
+      "minRating": 16,
+      "actionRequirement": "Assists when On Fire",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 3
+    },
+    {
+      "category": 3,
+      "id": "CLA",
+      "name": "Clamps",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "",
+      "minAction": 0.0,
+      "shouldScale": true,
+      "cost": 1
+    },
+    {
+      "category": 3,
+      "id": "LOC",
+      "name": "Locked In",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "Steals or Blocks in Clutch Situations",
+      "minAction": 0.4000000059604645,
+      "shouldScale": false,
+      "cost": 2
+    },
+    {
+      "category": 3,
+      "id": "MAG",
+      "name": "Magnet",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "Contested Rebounds",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 2
+    },
+    {
+      "category": 3,
+      "id": "TWO",
+      "name": "Two Way",
+      "attribute": 0,
+      "minRating": 0,
+      "actionRequirement": "Steals or Blocks Against an On Fire Opponent",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 2
+    },
+    {
+      "category": 3,
+      "id": "BAL",
+      "name": "Ball Hawk",
+      "attribute": 11,
+      "minRating": 16,
+      "actionRequirement": "Pass Deflections",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 3
+    },
+    {
+      "category": 3,
+      "id": "SNA",
+      "name": "Snatcher",
+      "attribute": 12,
+      "minRating": 16,
+      "actionRequirement": "Chasedown Blocks",
+      "minAction": 1.0,
+      "shouldScale": true,
+      "cost": 3
+    }
+  ]
+}

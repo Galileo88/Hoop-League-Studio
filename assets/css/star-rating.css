@@ -1,0 +1,14 @@
+.star-rating{display:inline-flex;vertical-align:middle;flex-shrink:0;line-height:1.2}
+.star-rating[hidden]{display:none}
+.star-rating-track{position:relative;display:inline-block;color:#647382;font:18px/1.2 Arial,sans-serif;letter-spacing:1px;white-space:nowrap}
+.star-rating-fill{position:absolute;inset:0 auto 0 0;overflow:hidden;color:#d4b567;white-space:nowrap}
+.roster-player>.star-rating{display:flex;margin-top:5px}
+.roster-player-panel>.star-rating{margin:0 0 12px}
+.team-config-logo{flex-wrap:wrap}
+.team-rating-summary{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 14px;font-size:13px;color:#c6d0c9}
+.team-label{min-width:0}.team-label>.star-rating{display:flex;margin-top:5px}.team-label .star-rating-track{font-size:14px}
+.team-config-name{overflow-wrap:anywhere;min-width:0}
+.team-ratings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-left:24px}
+.team-rating-card{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}
+.team-rating-card>strong{font-size:14px;text-transform:uppercase;letter-spacing:.5px}.team-rating-rank{font-size:20px;color:#f0f5f6}
+@media(max-width:760px){.team-config-name{flex:1}.team-ratings{width:100%;margin-left:0;gap:12px}.team-rating-card>strong{font-size:12px}.team-rating-rank{font-size:18px}}

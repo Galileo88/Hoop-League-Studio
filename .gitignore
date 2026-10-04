@@ -1,0 +1,22 @@
+# Local scratch work and generated test screenshots
+/work/
+/artifacts/
+/test-results/
+/playwright-report/
+
+# Locally installed tooling
+node_modules/
+dist/
+/downloads/*.msi
+/downloads/*-Setup.exe
+/downloads/*.dmg
+.tooling/
+__pycache__/
+*.pyc
+
+# Personal league exports
+/*.txt
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db

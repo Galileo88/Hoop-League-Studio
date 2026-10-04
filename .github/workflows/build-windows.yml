@@ -1,0 +1,56 @@
+name: Build Windows installer
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-2025
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v5
+        with:
+          version: 10
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Prepare Inno Setup compiler
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $compilerRoot = Join-Path $env:RUNNER_TEMP 'hls-inno-6.7.3'
+          $archive = Join-Path $env:RUNNER_TEMP 'hls-inno-6.7.3.zip'
+          Invoke-WebRequest -Uri 'https://api.nuget.org/v3-flatcontainer/tools.innosetup/6.7.3/tools.innosetup.6.7.3.nupkg' -OutFile $archive
+          Expand-Archive -LiteralPath $archive -DestinationPath $compilerRoot -Force
+          $compiler = Join-Path $compilerRoot 'tools/ISCC.exe'
+          if (-not (Test-Path -LiteralPath $compiler)) { throw 'Inno Setup compiler is missing.' }
+          "INNO_SETUP_COMPILER=$compiler" >> $env:GITHUB_ENV
+      - name: Build Windows EXE
+        run: pnpm build:setup
+      - name: Prepare download
+        id: installer
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $version = (Get-Content -LiteralPath 'package.json' -Raw | ConvertFrom-Json).version
+          $source = "dist/Hoop-League-Studio-$version-x64-Setup.exe"
+          $download = "dist/HoopLeagueStudio_v${version}_x64-Setup.exe"
+          if (-not (Test-Path -LiteralPath $source)) { throw 'The installer was not generated.' }
+          Move-Item -LiteralPath $source -Destination $download
+          "path=$download" >> $env:GITHUB_OUTPUT
+          "version=$version" >> $env:GITHUB_OUTPUT
+      - uses: actions/upload-artifact@v6
+        with:
+          name: Hoop-League-Studio-Windows-${{ steps.installer.outputs.version }}
+          path: ${{ steps.installer.outputs.path }}
+          if-no-files-found: error
+          compression-level: 0

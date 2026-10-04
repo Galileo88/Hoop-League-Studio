@@ -1,0 +1,112 @@
+name: Create release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - package.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hls-create-release
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      should_release: ${{ steps.version.outputs.should_release }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Check release version change
+        id: version
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const { execFileSync } = require('node:child_process');
+          const { version } = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          if (process.env.EVENT_NAME === 'push') {
+            const before = process.env.BEFORE_SHA;
+            if (before && !/^0+$/.test(before)) {
+              if (!/^[a-f0-9]{40}$/.test(before)) throw new Error('Invalid previous commit SHA.');
+              execFileSync('git', ['fetch', '--no-tags', '--depth=1', 'origin', before], { stdio: 'inherit' });
+              const files = execFileSync('git', ['ls-tree', '--name-only', before, '--', 'package.json'], { encoding: 'utf8' }).trim();
+              if (files) {
+                const previous = JSON.parse(execFileSync('git', ['show', `${before}:package.json`], { encoding: 'utf8' }));
+                if (previous.version === version) {
+                  fs.appendFileSync(process.env.GITHUB_OUTPUT, 'should_release=false\n');
+                  console.log('Package version is unchanged; skipping release builds.');
+                  process.exit(0);
+                }
+              }
+            }
+          }
+          if (!/^\d+\.\d+\.\d+$/.test(version)) throw new Error('Use a stable release version such as 1.0.2 in package.json.');
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `version=${version}\nshould_release=true\n`);
+          NODE
+      - name: Check that the version is new
+        if: steps.version.outputs.should_release == 'true'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          set -euo pipefail
+          existing=$(git ls-remote --tags origin "refs/tags/$VERSION" "refs/tags/v$VERSION")
+          if [[ -n "$existing" ]]; then
+            echo "::error::Version $VERSION already has a tag. Update package.json to a new version before running Create release."
+            exit 1
+          fi
+
+  windows:
+    needs: prepare
+    if: needs.prepare.outputs.should_release == 'true'
+    uses: ./.github/workflows/build-windows.yml
+
+  mac:
+    needs: prepare
+    if: needs.prepare.outputs.should_release == 'true'
+    uses: ./.github/workflows/build-mac.yml
+    with:
+      signed: false
+
+  release:
+    needs: [prepare, windows, mac]
+    if: needs.prepare.outputs.should_release == 'true'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: Hoop-League-Studio-*
+          path: release-files
+          merge-multiple: true
+      - name: Publish release with both installers
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          VERSION: ${{ needs.prepare.outputs.version }}
+        run: |
+          set -euo pipefail
+          windows="release-files/HoopLeagueStudio_v${VERSION}_x64-Setup.exe"
+          mac="release-files/HoopLeagueStudio_v${VERSION}_universal.dmg"
+          test -s "$windows"
+          test -s "$mac"
+          cp "$windows" release-files/HoopLeagueStudio-Windows-Setup.exe
+          cp "$mac" release-files/HoopLeagueStudio-Mac-universal.dmg
+          printf 'Hoop League Studio v%s\n' "$VERSION" > release-notes.md
+          gh release create "$VERSION" \
+            release-files/HoopLeagueStudio-Windows-Setup.exe \
+            release-files/HoopLeagueStudio-Mac-universal.dmg \
+            --target "$GITHUB_SHA" \
+            --title "Hoop League Studio v$VERSION" \
+            --notes-file release-notes.md --latest

@@ -1,0 +1,3311 @@
+{
+  "source": "Hoop Land 1.09.75 Steam TextAssets",
+  "assetHashes": {
+    "name-database": "5af06a1890b22058c6b6ee492396b1d73bab1f7562f6a94fa1ef731ce5dd9f74",
+    "archetypes": "d0e96a69a09ad684cb26d35cb65d0953c646bd1799b294495510a0acadf586a9",
+    "base-attributes": "d8af464059fb23d2fb8fa9f7f1f200eabc36f3b84a068f9e5b4dc9662501a7fc"
+  },
+  "keys": [
+    "LAY",
+    "DNK",
+    "INS",
+    "MID",
+    "TPT",
+    "FTS",
+    "DRB",
+    "PAS",
+    "ORE",
+    "DRE",
+    "STL",
+    "BLK"
+  ],
+  "positions": [
+    "PG",
+    "G",
+    "SG",
+    "GF",
+    "SF",
+    "F",
+    "PF",
+    "FC",
+    "C"
+  ],
+  "base": [
+    [
+      5,
+      3,
+      3,
+      4,
+      4,
+      4,
+      5,
+      5,
+      2,
+      3,
+      5,
+      2
+    ],
+    [
+      4,
+      4,
+      3,
+      4,
+      5,
+      4,
+      5,
+      4,
+      2,
+      3,
+      5,
+      2
+    ],
+    [
+      4,
+      5,
+      3,
+      5,
+      5,
+      5,
+      4,
+      3,
+      2,
+      3,
+      4,
+      2
+    ],
+    [
+      3,
+      4,
+      3,
+      5,
+      5,
+      5,
+      3,
+      3,
+      3,
+      4,
+      4,
+      3
+    ],
+    [
+      3,
+      4,
+      4,
+      5,
+      5,
+      4,
+      3,
+      3,
+      3,
+      4,
+      3,
+      4
+    ],
+    [
+      3,
+      4,
+      4,
+      5,
+      4,
+      4,
+      3,
+      3,
+      4,
+      4,
+      3,
+      4
+    ],
+    [
+      3,
+      4,
+      4,
+      5,
+      2,
+      3,
+      3,
+      3,
+      5,
+      5,
+      3,
+      5
+    ],
+    [
+      3,
+      4,
+      5,
+      4,
+      2,
+      3,
+      3,
+      3,
+      5,
+      5,
+      3,
+      5
+    ],
+    [
+      3,
+      5,
+      5,
+      3,
+      2,
+      3,
+      2,
+      4,
+      5,
+      5,
+      3,
+      5
+    ]
+  ],
+  "archetypes": [
+    {
+      "name": "All Around",
+      "bonuses": [
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        2,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "Athletic Finisher",
+      "bonuses": [
+        3,
+        3,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "Interior Defender",
+      "bonuses": [
+        1,
+        2,
+        1,
+        0,
+        0,
+        1,
+        0,
+        2,
+        1,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "Perimeter Defender",
+      "bonuses": [
+        2,
+        2,
+        0,
+        1,
+        1,
+        2,
+        1,
+        0,
+        0,
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "name": "Playmaker",
+      "bonuses": [
+        1,
+        0,
+        1,
+        2,
+        2,
+        0,
+        3,
+        3,
+        2,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "Post Scorer",
+      "bonuses": [
+        2,
+        1,
+        3,
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Rebounder",
+      "bonuses": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        3,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "name": "Sharpshooter",
+      "bonuses": [
+        2,
+        0,
+        3,
+        3,
+        3,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Shot Creator",
+      "bonuses": [
+        2,
+        1,
+        3,
+        3,
+        2,
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Slasher",
+      "bonuses": [
+        3,
+        3,
+        0,
+        0,
+        0,
+        3,
+        3,
+        0,
+        0,
+        0,
+        2,
+        1
+      ]
+    }
+  ],
+  "names": {
+    "first": [
+      "James",
+      "John",
+      "Robert",
+      "Michael",
+      "William",
+      "David",
+      "Richard",
+      "Charles",
+      "Joseph",
+      "Thomas",
+      "Christopher",
+      "Daniel",
+      "Paul",
+      "Mark",
+      "Donald",
+      "George",
+      "Kenneth",
+      "Steven",
+      "Edward",
+      "Brian",
+      "Ronald",
+      "Anthony",
+      "Kevin",
+      "Jason",
+      "Matthew",
+      "Gary",
+      "Timothy",
+      "Larry",
+      "Jeffrey",
+      "Frank",
+      "Scott",
+      "Eric",
+      "Stephen",
+      "Andrew",
+      "Raymond",
+      "Gregory",
+      "Joshua",
+      "Jerry",
+      "Dennis",
+      "Walter",
+      "Patrick",
+      "Peter",
+      "Harold",
+      "Douglas",
+      "Henry",
+      "Carl",
+      "Arthur",
+      "Ryan",
+      "Roger",
+      "Joe",
+      "Jack",
+      "Albert",
+      "Justin",
+      "Terry",
+      "Gerald",
+      "Keith",
+      "Samuel",
+      "Willie",
+      "Ralph",
+      "Lawrence",
+      "Nicholas",
+      "Roy",
+      "Benjamin",
+      "Bruce",
+      "Brandon",
+      "Adam",
+      "Harry",
+      "Fred",
+      "Wayne",
+      "Billy",
+      "Steve",
+      "Louis",
+      "Jeremy",
+      "Aaron",
+      "Randy",
+      "Howard",
+      "Eugene",
+      "Carlos",
+      "Russell",
+      "Bobby",
+      "Victor",
+      "Martin",
+      "Ernest",
+      "Phillip",
+      "Todd",
+      "Jesse",
+      "Craig",
+      "Alan",
+      "Shawn",
+      "Clarence",
+      "Sean",
+      "Philip",
+      "Chris",
+      "Johnny",
+      "Earl",
+      "Jimmy",
+      "Antonio",
+      "Danny",
+      "Bryan",
+      "Tony",
+      "Luis",
+      "Mike",
+      "Stanley",
+      "Leonard",
+      "Nathan",
+      "Dale",
+      "Rodney",
+      "Curtis",
+      "Norman",
+      "Allen",
+      "Marvin",
+      "Vincent",
+      "Glenn",
+      "Jeffery",
+      "Travis",
+      "Jeff",
+      "Chad",
+      "Jacob",
+      "Lee",
+      "Melvin",
+      "Alfred",
+      "Kyle",
+      "Francis",
+      "Bradley",
+      "Herbert",
+      "Frederick",
+      "Ray",
+      "Joel",
+      "Edwin",
+      "Don",
+      "Eddie",
+      "Ricky",
+      "Troy",
+      "Randall",
+      "Barry",
+      "Alexander",
+      "Bernard",
+      "Mario",
+      "Leroy",
+      "Marcus",
+      "Michael",
+      "Theodore",
+      "Clifford",
+      "Oscar",
+      "Jay",
+      "Jim",
+      "Tom",
+      "Calvin",
+      "Alex",
+      "Jon",
+      "Ronnie",
+      "Bill",
+      "Lloyd",
+      "Tommy",
+      "Leon",
+      "Derek",
+      "Warren",
+      "Darrell",
+      "Jerome",
+      "Floyd",
+      "Leo",
+      "Alvin",
+      "Tim",
+      "Wesley",
+      "Gordon",
+      "Dean",
+      "Greg",
+      "Dustin",
+      "Derrick",
+      "Dan",
+      "Lewis",
+      "Zachary",
+      "Corey",
+      "Herman",
+      "Maurice",
+      "Vernon",
+      "Clyde",
+      "Glen",
+      "Shane",
+      "Sam",
+      "Rick",
+      "Lester",
+      "Brent",
+      "Charlie",
+      "Tyler",
+      "Gilbert",
+      "Gene",
+      "Marc",
+      "Ruben",
+      "Brett",
+      "Nathaniel",
+      "Edgar",
+      "Leslie",
+      "Milton",
+      "Ben",
+      "Chester",
+      "Duane",
+      "Franklin",
+      "Andre",
+      "Elmer",
+      "Brad",
+      "Ron",
+      "Mitchell",
+      "Roland",
+      "Arnold",
+      "Harvey",
+      "Jared",
+      "Adrian",
+      "Karl",
+      "Cory",
+      "Claude",
+      "Erik",
+      "Darryl",
+      "Jamie",
+      "Neil",
+      "Jessie",
+      "Christian",
+      "Clinton",
+      "Allan",
+      "Ted",
+      "Kurt",
+      "Mathew",
+      "Julio",
+      "Kelly",
+      "Tyrone",
+      "Darren",
+      "Lance",
+      "Cody",
+      "Lonnie",
+      "Nelson",
+      "Guy",
+      "Clayton",
+      "Hugh",
+      "Max",
+      "Dwayne",
+      "Dwight",
+      "Felix",
+      "Jimmie",
+      "Everett",
+      "Jordan",
+      "Ian",
+      "Wallace",
+      "Ken",
+      "Bob",
+      "Jaime",
+      "Casey",
+      "Dave",
+      "Ivan",
+      "Johnnie",
+      "Sidney",
+      "Byron",
+      "Julian",
+      "Isaac",
+      "Daryl",
+      "Ross",
+      "Marshall",
+      "Perry",
+      "Kirk",
+      "Tracy",
+      "Seth",
+      "Kent",
+      "Terrance",
+      "Terrence",
+      "Freddie",
+      "Austin",
+      "Stuart",
+      "Fredrick",
+      "Jackie",
+      "Joey",
+      "Nick",
+      "Luther",
+      "Wendell",
+      "Jeremiah",
+      "Evan",
+      "Julius",
+      "Dana",
+      "Donnie",
+      "Otis",
+      "Shannon",
+      "Trevor",
+      "Oliver",
+      "Luke",
+      "Homer",
+      "Gerard",
+      "Doug",
+      "Kenny",
+      "Hubert",
+      "Shaun",
+      "Lyle",
+      "Carlton",
+      "Horace",
+      "Matt",
+      "Johnathan",
+      "Damon",
+      "Garry",
+      "Ed",
+      "Robin",
+      "Spencer",
+      "Simon",
+      "Jake",
+      "Lionel"
+    ],
+    "last": [
+      "Smith",
+      "Johnson",
+      "Williams",
+      "Brown",
+      "Jones",
+      "Miller",
+      "Davis",
+      "Wilson",
+      "Anderson",
+      "Thomas",
+      "Taylor",
+      "Moore",
+      "Jackson",
+      "Martin",
+      "Lee",
+      "Thompson",
+      "White",
+      "Harris",
+      "Clark",
+      "Lewis",
+      "Robinson",
+      "Walker",
+      "Young",
+      "Allen",
+      "King",
+      "Wright",
+      "Scott",
+      "Hill",
+      "Green",
+      "Adams",
+      "Nelson",
+      "Baker",
+      "Hall",
+      "Campbell",
+      "Mitchell",
+      "Carter",
+      "Roberts",
+      "Phillips",
+      "Evans",
+      "Turner",
+      "Parker",
+      "Edwards",
+      "Collins",
+      "Stewart",
+      "Morris",
+      "Murphy",
+      "Cook",
+      "Rogers",
+      "Morgan",
+      "Cooper",
+      "Peterson",
+      "Bailey",
+      "Reed",
+      "Kelly",
+      "Howard",
+      "Cox",
+      "Ward",
+      "Richardson",
+      "Watson",
+      "Brooks",
+      "Wood",
+      "James",
+      "Bennett",
+      "Gray",
+      "Hughes",
+      "Price",
+      "Sanders",
+      "Myers",
+      "Long",
+      "Ross",
+      "Foster",
+      "Powell",
+      "Jenkins",
+      "Perry",
+      "Russell",
+      "Sullivan",
+      "Bell",
+      "Coleman",
+      "Butler",
+      "Henderson",
+      "Barnes",
+      "Fisher",
+      "Simmons",
+      "Jordan",
+      "Patterson",
+      "Alexander",
+      "Hamilton",
+      "Graham",
+      "Reynolds",
+      "Griffin",
+      "Wallace",
+      "West",
+      "Cole",
+      "Hayes",
+      "Bryant",
+      "Gibson",
+      "Ellis",
+      "Stevens",
+      "Murray",
+      "Ford",
+      "Marshall",
+      "Owens",
+      "Harrison",
+      "McDonald",
+      "Woods",
+      "Washington",
+      "Kennedy",
+      "Wells",
+      "Henry",
+      "Freeman",
+      "Webb",
+      "Tucker",
+      "Burns",
+      "Crawford",
+      "Olson",
+      "Simpson",
+      "Porter",
+      "Hunter",
+      "Gordon",
+      "Shaw",
+      "Snyder",
+      "Mason",
+      "Dixon",
+      "Hunt",
+      "Hicks",
+      "Holmes",
+      "Palmer",
+      "Wagner",
+      "Black",
+      "Robertson",
+      "Boyd",
+      "Rose",
+      "Stone",
+      "Fox",
+      "Warren",
+      "Mills",
+      "Meyer",
+      "Rice",
+      "Daniels",
+      "Ferguson",
+      "Nichols",
+      "Stephens",
+      "Weaver",
+      "Ryan",
+      "Gardner",
+      "Payne",
+      "Grant",
+      "Dunn",
+      "Kelly",
+      "Spencer",
+      "Hawkins",
+      "Arnold",
+      "Pierce",
+      "Hansen",
+      "Peters",
+      "Hart",
+      "Bradley",
+      "Knight",
+      "Elliott",
+      "Cunningham",
+      "Duncan",
+      "Armstrong",
+      "Hudson",
+      "Carroll",
+      "Lane",
+      "Riley",
+      "Andrews",
+      "Ray",
+      "Berry",
+      "Perkins",
+      "Hoffman",
+      "Johnston",
+      "Matthews",
+      "Richards",
+      "Willis",
+      "Carpenter",
+      "Lawrence",
+      "George",
+      "Chapman",
+      "Watkins",
+      "Greene",
+      "Wheeler",
+      "Harper",
+      "Burke",
+      "Larson",
+      "Morrison",
+      "Franklin",
+      "Carlson",
+      "Austin",
+      "Carr",
+      "Lawson",
+      "Jacobs",
+      "Obrien",
+      "Lynch",
+      "Bishop",
+      "Montgomery",
+      "Oliver",
+      "Jensen",
+      "Harvey",
+      "Williamson",
+      "Gilbert",
+      "Dean",
+      "Sims",
+      "Howell",
+      "Reid",
+      "Hanson",
+      "McCoy",
+      "Garrett",
+      "Burton",
+      "Fuller",
+      "Weber",
+      "Welch",
+      "Lucas",
+      "Fields",
+      "Little",
+      "Banks",
+      "Day",
+      "Walsh",
+      "Bowman",
+      "Schultz",
+      "Fowler",
+      "Davidson",
+      "Brewer",
+      "May",
+      "Holland",
+      "Newman",
+      "Pearson",
+      "Curtis",
+      "Douglas",
+      "Schneider",
+      "Joseph",
+      "Barrett",
+      "Keller",
+      "Wade",
+      "Stanley",
+      "Hopkins",
+      "Barnett",
+      "Bates",
+      "Chambers",
+      "Caldwell",
+      "Beck",
+      "Lambert",
+      "Byrd",
+      "Craig",
+      "Lowe",
+      "Frazier",
+      "Powers",
+      "Neal",
+      "Leonard",
+      "Gregory",
+      "Sutton",
+      "Fleming",
+      "Rhodes",
+      "Shelton",
+      "Norris",
+      "Jennings",
+      "Watts",
+      "Walters",
+      "McDaniel",
+      "Parks",
+      "Steele",
+      "Vaughn",
+      "Moran",
+      "Cohen",
+      "Becker",
+      "Holt",
+      "Barker",
+      "Terry",
+      "Hale",
+      "Benson",
+      "Haynes",
+      "Horton",
+      "Miles",
+      "Lyons",
+      "Graves",
+      "Bush",
+      "Thornton",
+      "Wolfe",
+      "Warner",
+      "McKinney",
+      "Mann",
+      "Dawson",
+      "Fletcher",
+      "Page",
+      "McCarthy",
+      "Love",
+      "Erickson",
+      "Reeves",
+      "Baldwin",
+      "Daniel",
+      "Simon",
+      "Hardy",
+      "Higgins",
+      "Cummings",
+      "Chandler",
+      "Sharp",
+      "Barber",
+      "Bowen",
+      "Dennis",
+      "Robbins",
+      "Ramsey",
+      "Francis",
+      "Griffith",
+      "Paul",
+      "Blair",
+      "Cross",
+      "Quinn",
+      "Moss",
+      "Swanson",
+      "Rodgers",
+      "Fitzgerald",
+      "Stevenson",
+      "Manning",
+      "Gill",
+      "Curry",
+      "McLaughlin",
+      "Harmon",
+      "McGee",
+      "Gross",
+      "Doyle",
+      "Garner",
+      "Newton",
+      "Burgess",
+      "Reese",
+      "Walton",
+      "Blake",
+      "Adkins",
+      "Brady",
+      "Goodman",
+      "Webster",
+      "Goodwin",
+      "Potter",
+      "Todd",
+      "Hines",
+      "Mullins",
+      "Malone",
+      "Cannon",
+      "Tate",
+      "Mack",
+      "Sherman",
+      "Hubbard",
+      "Hodges",
+      "Wolf",
+      "Saunders",
+      "Rowe",
+      "Gallagher",
+      "Farmer",
+      "Hammond",
+      "Hampton",
+      "Townsend",
+      "Ingram",
+      "Wise",
+      "Clarke",
+      "Barton",
+      "Schroeder",
+      "Maxwell",
+      "Waters",
+      "Logan",
+      "Strickland",
+      "Norman",
+      "Person",
+      "Parsons",
+      "Frank",
+      "Harrington",
+      "Glover",
+      "Osborne",
+      "Buchanan",
+      "Casey",
+      "Floyd",
+      "Patton",
+      "Ball",
+      "Tyler",
+      "Bowers",
+      "Cobb",
+      "Gibbs",
+      "Conner",
+      "Moody",
+      "McGuire",
+      "Lloyd",
+      "Mueller",
+      "Hartman",
+      "French",
+      "Kramer",
+      "McBride",
+      "Pope",
+      "Lindsey",
+      "Norton",
+      "McCormick",
+      "Sparks",
+      "Flynn",
+      "Yates",
+      "Hogan",
+      "Marsh",
+      "Pratt",
+      "Stokes",
+      "Owen",
+      "Ballard",
+      "Lang",
+      "Brock",
+      "Charles",
+      "Drake",
+      "Cain",
+      "Patrick",
+      "Burnett",
+      "Shepherd",
+      "Ali",
+      "Shaffer",
+      "Lamb",
+      "McKenzie",
+      "Hess",
+      "Beil",
+      "Olsen",
+      "Cochran",
+      "Morton",
+      "Nash",
+      "Wilkins",
+      "Petersen",
+      "Briggs",
+      "Roth",
+      "Nicholson",
+      "Holloway",
+      "Flowers",
+      "Hoover",
+      "Short",
+      "Bryan",
+      "Meyers",
+      "Weiss",
+      "Underwood",
+      "Bass",
+      "Greer",
+      "Summers",
+      "Houston",
+      "Carson",
+      "Morrow",
+      "Clayton",
+      "Whitaker",
+      "Decker",
+      "Collier",
+      "Carey",
+      "Wilcox",
+      "Poole",
+      "Roberson",
+      "Larsen",
+      "Conley",
+      "Davenport",
+      "Copeland",
+      "Massey",
+      "Huff",
+      "Cameron",
+      "Jefferson",
+      "Hood",
+      "Monroe",
+      "Anthony",
+      "Pittman",
+      "Randall",
+      "Singleton",
+      "Kirk",
+      "Combs",
+      "Mathis",
+      "Christian",
+      "Skinner",
+      "Bradford",
+      "Richard",
+      "Wall",
+      "Boone",
+      "Kirby",
+      "Wilkinson",
+      "Bridges",
+      "Bruce",
+      "Atkinson",
+      "Roy",
+      "Vincent",
+      "York",
+      "Hodge",
+      "Abbott",
+      "Allison",
+      "Gates",
+      "Chase",
+      "Sweeney",
+      "Farrell",
+      "Wyatt",
+      "Dalton",
+      "Horn",
+      "Barron",
+      "Phelps",
+      "Dickerson",
+      "Heath",
+      "Foley",
+      "Atkins",
+      "Mathews",
+      "Hensley",
+      "Glenn",
+      "Harrell",
+      "Shields",
+      "Huffman",
+      "Boyer",
+      "Garrison",
+      "Bond",
+      "Kane",
+      "Hancock",
+      "Wiggins",
+      "Savage",
+      "Parrish",
+      "Booth",
+      "Marks",
+      "Humphrey",
+      "O'Neal",
+      "Stephenson",
+      "Snow",
+      "Beasley",
+      "Prince",
+      "Kemp",
+      "Knox",
+      "Kerr",
+      "Bullock"
+    ],
+    "femaleFirst": [
+      "Olivia",
+      "Emma",
+      "Charlotte",
+      "Amelia",
+      "Ava",
+      "Sophia",
+      "Isabella",
+      "Mia",
+      "Evelyn",
+      "Harper",
+      "Luna",
+      "Camila",
+      "Gianna",
+      "Elizabeth",
+      "Eleanor",
+      "Ella",
+      "Abigail",
+      "Sofia",
+      "Avery",
+      "Scarlett",
+      "Emily",
+      "Natalie",
+      "Julie",
+      "Rachel",
+      "Rae",
+      "Sue",
+      "Veronica",
+      "Maya",
+      "Jordin",
+      "Bridget",
+      "Tina",
+      "Kaila",
+      "Natasha",
+      "Nia",
+      "Sophie",
+      "Crystal",
+      "Elena",
+      "Jasmine",
+      "Asia",
+      "Sylvia",
+      "Brittney",
+      "Tianna",
+      "Sabrina",
+      "Jazmine",
+      "Kayla",
+      "Emma",
+      "Tiffany",
+      "Kia",
+      "Kelsey",
+      "Allie",
+      "Danielle",
+      "Breanna",
+      "Stephanie",
+      "Diana",
+      "Alyssa",
+      "Kristi",
+      "Courtney",
+      "Erica",
+      "Gabby",
+      "Jackie",
+      "Penelope",
+      "Chloe",
+      "Layla",
+      "Mila",
+      "Nora",
+      "Hazel",
+      "Madison",
+      "Ellie",
+      "Lily",
+      "Nova",
+      "Isla",
+      "Grace",
+      "Violet",
+      "Aurora",
+      "Riley",
+      "Zoey",
+      "Willow",
+      "Emilia",
+      "Stella",
+      "Zoe",
+      "Victoria",
+      "Hannah",
+      "Addison",
+      "Leah",
+      "Lucy",
+      "Ivy"
+    ],
+    "femaleLast": []
+  },
+  "teamNames": [
+    "Aces",
+    "Admirals",
+    "Amigos",
+    "Avalanche",
+    "Bandits",
+    "Barons",
+    "Bats",
+    "Bears",
+    "Beavers",
+    "Bengals",
+    "Blackhawks",
+    "Blades",
+    "Blazers",
+    "Blue Jackets",
+    "Blues",
+    "Bobcats",
+    "Broncos",
+    "Bruins",
+    "Buccaneers",
+    "Bucks",
+    "Bulldogs",
+    "Bulls",
+    "Buzzards",
+    "Capitals",
+    "Cardinals",
+    "Cavaliers",
+    "Celtics",
+    "Chargers",
+    "Charms",
+    "Clippers",
+    "Cobras",
+    "Comets",
+    "Cougars",
+    "Coyotes",
+    "Cyclones",
+    "Devils",
+    "Dragons",
+    "Ducks",
+    "Eagles",
+    "Falcons",
+    "Firebirds",
+    "Flames",
+    "Flyers",
+    "Force",
+    "Freeze",
+    "Gators",
+    "Generals",
+    "Gladiators",
+    "Gorillas",
+    "Grizzlies",
+    "Hawks",
+    "Heat",
+    "Hornets",
+    "Hurricanes",
+    "Huskies",
+    "Islanders",
+    "Jazz",
+    "Jets",
+    "Killer Bees",
+    "Kings",
+    "Knicks",
+    "Knights",
+    "Kraken",
+    "Lakers",
+    "Lightning",
+    "Lions",
+    "Lumberjacks",
+    "Lynx",
+    "Magic",
+    "Mariners",
+    "Mavericks",
+    "Moose",
+    "Mustangs",
+    "Nets",
+    "Nighthawks",
+    "Night Owls",
+    "Nuggets",
+    "Oilers",
+    "Outlaws",
+    "Pacers",
+    "Panthers",
+    "Patriots",
+    "Pelicans",
+    "Penguins",
+    "Pilots",
+    "Pioneers",
+    "Pirates",
+    "Pistons",
+    "Predators",
+    "Racers",
+    "Raiders",
+    "Rams",
+    "Rangers",
+    "Raptors",
+    "Rattlers",
+    "Ravens",
+    "Red Wings",
+    "Renegades",
+    "Reign",
+    "Rockets",
+    "Royals",
+    "Sabres",
+    "Saints",
+    "Scorpions",
+    "Seahawks",
+    "Senators",
+    "Sharks",
+    "Spartans",
+    "Spurs",
+    "Stars",
+    "Storm",
+    "Suns",
+    "Thunder",
+    "Tigers",
+    "Titans",
+    "Tornadoes",
+    "Trojans",
+    "Vikings",
+    "Vipers",
+    "Warriors",
+    "Whales",
+    "Wildcats",
+    "Wizards",
+    "Wolves"
+  ],
+  "cities": [
+    {
+      "name": "Auburn",
+      "location": {
+        "x": 326100,
+        "y": -854800
+      }
+    },
+    {
+      "name": "Birmingham",
+      "location": {
+        "x": 3352,
+        "y": -8681
+      }
+    },
+    {
+      "name": "Huntsville",
+      "location": {
+        "x": 3473,
+        "y": -8659
+      }
+    },
+    {
+      "name": "Mobile",
+      "location": {
+        "x": 3069,
+        "y": -8804
+      }
+    },
+    {
+      "name": "Montgomery",
+      "location": {
+        "x": 3238,
+        "y": -8631
+      }
+    },
+    {
+      "name": "Tuscaloosa",
+      "location": {
+        "x": 3321,
+        "y": -8756
+      }
+    },
+    {
+      "name": "Anchorage",
+      "location": {
+        "x": 6122,
+        "y": -14989
+      }
+    },
+    {
+      "name": "Fairbanks",
+      "location": {
+        "x": 6484,
+        "y": -14772
+      }
+    },
+    {
+      "name": "Juneau",
+      "location": {
+        "x": 5830,
+        "y": -13441
+      }
+    },
+    {
+      "name": "Ketchikan",
+      "location": {
+        "x": 5534,
+        "y": -13165
+      }
+    },
+    {
+      "name": "Sitka",
+      "location": {
+        "x": 5705,
+        "y": -13533
+      }
+    },
+    {
+      "name": "Chandler",
+      "location": {
+        "x": 3331,
+        "y": -11184
+      }
+    },
+    {
+      "name": "Mesa",
+      "location": {
+        "x": 3342,
+        "y": -11182
+      }
+    },
+    {
+      "name": "Phoenix",
+      "location": {
+        "x": 3345,
+        "y": -11207
+      }
+    },
+    {
+      "name": "Scottsdale",
+      "location": {
+        "x": 3350,
+        "y": -11192
+      }
+    },
+    {
+      "name": "Tucson",
+      "location": {
+        "x": 3222,
+        "y": -11097
+      }
+    },
+    {
+      "name": "Fayetteville",
+      "location": {
+        "x": 3606,
+        "y": -9416
+      }
+    },
+    {
+      "name": "Fort Smith",
+      "location": {
+        "x": 3539,
+        "y": -9441
+      }
+    },
+    {
+      "name": "Jonesboro",
+      "location": {
+        "x": 3584,
+        "y": -9069
+      }
+    },
+    {
+      "name": "Little Rock",
+      "location": {
+        "x": 3474,
+        "y": -9227
+      }
+    },
+    {
+      "name": "Springdale",
+      "location": {
+        "x": 3619,
+        "y": -9413
+      }
+    },
+    {
+      "name": "Anaheim",
+      "location": {
+        "x": 3384,
+        "y": -11791
+      }
+    },
+    {
+      "name": "Bakersfield",
+      "location": {
+        "x": 3537,
+        "y": -11902
+      }
+    },
+    {
+      "name": "Fresno",
+      "location": {
+        "x": 3675,
+        "y": -11977
+      }
+    },
+    {
+      "name": "Long Beach",
+      "location": {
+        "x": 3377,
+        "y": -11819
+      }
+    },
+    {
+      "name": "Los Angeles",
+      "location": {
+        "x": 3405,
+        "y": -11824
+      }
+    },
+    {
+      "name": "Oakland",
+      "location": {
+        "x": 3780,
+        "y": -12227
+      }
+    },
+    {
+      "name": "Sacramento",
+      "location": {
+        "x": 3858,
+        "y": -12149
+      }
+    },
+    {
+      "name": "San Diego",
+      "location": {
+        "x": 3272,
+        "y": -11716
+      }
+    },
+    {
+      "name": "San Francisco",
+      "location": {
+        "x": 3777,
+        "y": -12242
+      }
+    },
+    {
+      "name": "San Jose",
+      "location": {
+        "x": 3734,
+        "y": -12189
+      }
+    },
+    {
+      "name": "Aurora",
+      "location": {
+        "x": 3973,
+        "y": -10482
+      }
+    },
+    {
+      "name": "Boulder",
+      "location": {
+        "x": 400100,
+        "y": -105300
+      }
+    },
+    {
+      "name": "Colorado Springs",
+      "location": {
+        "x": 3883,
+        "y": -10482
+      }
+    },
+    {
+      "name": "Denver",
+      "location": {
+        "x": 3974,
+        "y": -10499
+      }
+    },
+    {
+      "name": "Fort Collins",
+      "location": {
+        "x": 4059,
+        "y": -10508
+      }
+    },
+    {
+      "name": "Lakewood",
+      "location": {
+        "x": 3970,
+        "y": -10508
+      }
+    },
+    {
+      "name": "Bridgeport",
+      "location": {
+        "x": 4117,
+        "y": -7319
+      }
+    },
+    {
+      "name": "Hartford",
+      "location": {
+        "x": 4176,
+        "y": -7268
+      }
+    },
+    {
+      "name": "New Haven",
+      "location": {
+        "x": 4131,
+        "y": -7292
+      }
+    },
+    {
+      "name": "Stamford",
+      "location": {
+        "x": 4106,
+        "y": -7354
+      }
+    },
+    {
+      "name": "Storrs",
+      "location": {
+        "x": 418000,
+        "y": -722500
+      }
+    },
+    {
+      "name": "Waterbury",
+      "location": {
+        "x": 4156,
+        "y": -7305
+      }
+    },
+    {
+      "name": "Dover",
+      "location": {
+        "x": 3916,
+        "y": -7553
+      }
+    },
+    {
+      "name": "Middletown",
+      "location": {
+        "x": 3945,
+        "y": -7571
+      }
+    },
+    {
+      "name": "Newark",
+      "location": {
+        "x": 3968,
+        "y": -7575
+      }
+    },
+    {
+      "name": "Smyrna",
+      "location": {
+        "x": 3930,
+        "y": -7561
+      }
+    },
+    {
+      "name": "Wilmington",
+      "location": {
+        "x": 3974,
+        "y": -7554
+      }
+    },
+    {
+      "name": "Gainesville",
+      "location": {
+        "x": 296700,
+        "y": -823400
+      }
+    },
+    {
+      "name": "Jacksonville",
+      "location": {
+        "x": 3033,
+        "y": -8166
+      }
+    },
+    {
+      "name": "Miami",
+      "location": {
+        "x": 2576,
+        "y": -8019
+      }
+    },
+    {
+      "name": "Orlando",
+      "location": {
+        "x": 2854,
+        "y": -8138
+      }
+    },
+    {
+      "name": "St. Petersburg",
+      "location": {
+        "x": 2777,
+        "y": -8267
+      }
+    },
+    {
+      "name": "Tallahassee",
+      "location": {
+        "x": 304400,
+        "y": -842800
+      }
+    },
+    {
+      "name": "Tampa",
+      "location": {
+        "x": 2795,
+        "y": -8247
+      }
+    },
+    {
+      "name": "Atlanta",
+      "location": {
+        "x": 3375,
+        "y": -8439
+      }
+    },
+    {
+      "name": "Augusta",
+      "location": {
+        "x": 3347,
+        "y": -8197
+      }
+    },
+    {
+      "name": "Columbus",
+      "location": {
+        "x": 3247,
+        "y": -8498
+      }
+    },
+    {
+      "name": "Macon",
+      "location": {
+        "x": 3284,
+        "y": -8363
+      }
+    },
+    {
+      "name": "Oxford",
+      "location": {
+        "x": 336200,
+        "y": -838600
+      }
+    },
+    {
+      "name": "Savannah",
+      "location": {
+        "x": 3208,
+        "y": -8110
+      }
+    },
+    {
+      "name": "Hilo",
+      "location": {
+        "x": 1971,
+        "y": -15508
+      }
+    },
+    {
+      "name": "Honolulu",
+      "location": {
+        "x": 2131,
+        "y": -15786
+      }
+    },
+    {
+      "name": "Kailua",
+      "location": {
+        "x": 2139,
+        "y": -15774
+      }
+    },
+    {
+      "name": "Kapolei",
+      "location": {
+        "x": 2133,
+        "y": -15809
+      }
+    },
+    {
+      "name": "Pearl City",
+      "location": {
+        "x": 2141,
+        "y": -15797
+      }
+    },
+    {
+      "name": "Boise",
+      "location": {
+        "x": 4362,
+        "y": -11621
+      }
+    },
+    {
+      "name": "Idaho Falls",
+      "location": {
+        "x": 4349,
+        "y": -11204
+      }
+    },
+    {
+      "name": "Meridian",
+      "location": {
+        "x": 4361,
+        "y": -11639
+      }
+    },
+    {
+      "name": "Moscow",
+      "location": {
+        "x": 468400,
+        "y": -1170000
+      }
+    },
+    {
+      "name": "Nampa",
+      "location": {
+        "x": 4358,
+        "y": -11657
+      }
+    },
+    {
+      "name": "Pocatello",
+      "location": {
+        "x": 4287,
+        "y": -11245
+      }
+    },
+    {
+      "name": "Aurora",
+      "location": {
+        "x": 4176,
+        "y": -8820
+      }
+    },
+    {
+      "name": "Chicago",
+      "location": {
+        "x": 4187,
+        "y": -8762
+      }
+    },
+    {
+      "name": "Joliet",
+      "location": {
+        "x": 4153,
+        "y": -8812
+      }
+    },
+    {
+      "name": "Naperville",
+      "location": {
+        "x": 4175,
+        "y": -8815
+      }
+    },
+    {
+      "name": "Rockford",
+      "location": {
+        "x": 4227,
+        "y": -8910
+      }
+    },
+    {
+      "name": "Evansville",
+      "location": {
+        "x": 3797,
+        "y": -8756
+      }
+    },
+    {
+      "name": "Fort Wayne",
+      "location": {
+        "x": 4108,
+        "y": -8514
+      }
+    },
+    {
+      "name": "Hammond",
+      "location": {
+        "x": 4161,
+        "y": -8749
+      }
+    },
+    {
+      "name": "Indianapolis",
+      "location": {
+        "x": 3977,
+        "y": -8615
+      }
+    },
+    {
+      "name": "South Bend",
+      "location": {
+        "x": 4168,
+        "y": -8625
+      }
+    },
+    {
+      "name": "Cedar Rapids",
+      "location": {
+        "x": 4198,
+        "y": -9166
+      }
+    },
+    {
+      "name": "Davenport",
+      "location": {
+        "x": 4153,
+        "y": -9058
+      }
+    },
+    {
+      "name": "Des Moines",
+      "location": {
+        "x": 4159,
+        "y": -9362
+      }
+    },
+    {
+      "name": "Iowa City",
+      "location": {
+        "x": 4166,
+        "y": -9154
+      }
+    },
+    {
+      "name": "Sioux City",
+      "location": {
+        "x": 4250,
+        "y": -9640
+      }
+    },
+    {
+      "name": "Kansas City",
+      "location": {
+        "x": 3911,
+        "y": -9463
+      }
+    },
+    {
+      "name": "Olathe",
+      "location": {
+        "x": 3888,
+        "y": -9482
+      }
+    },
+    {
+      "name": "Overland Park",
+      "location": {
+        "x": 3898,
+        "y": -9467
+      }
+    },
+    {
+      "name": "Topeka",
+      "location": {
+        "x": 3905,
+        "y": -9568
+      }
+    },
+    {
+      "name": "Wichita",
+      "location": {
+        "x": 3769,
+        "y": -9734
+      }
+    },
+    {
+      "name": "Bowling Green",
+      "location": {
+        "x": 3699,
+        "y": -8644
+      }
+    },
+    {
+      "name": "Covington",
+      "location": {
+        "x": 3909,
+        "y": -8451
+      }
+    },
+    {
+      "name": "Lexington",
+      "location": {
+        "x": 3803,
+        "y": -8450
+      }
+    },
+    {
+      "name": "Louisville",
+      "location": {
+        "x": 3825,
+        "y": -8576
+      }
+    },
+    {
+      "name": "Owensboro",
+      "location": {
+        "x": 3777,
+        "y": -8711
+      }
+    },
+    {
+      "name": "Baton Rouge",
+      "location": {
+        "x": 3045,
+        "y": -9115
+      }
+    },
+    {
+      "name": "Lafayette",
+      "location": {
+        "x": 3022,
+        "y": -9201
+      }
+    },
+    {
+      "name": "Lake Charles",
+      "location": {
+        "x": 3021,
+        "y": -9321
+      }
+    },
+    {
+      "name": "New Orleans",
+      "location": {
+        "x": 2995,
+        "y": -9008
+      }
+    },
+    {
+      "name": "Shreveport",
+      "location": {
+        "x": 3252,
+        "y": -9377
+      }
+    },
+    {
+      "name": "Auburn",
+      "location": {
+        "x": 4409,
+        "y": -7022
+      }
+    },
+    {
+      "name": "Bangor",
+      "location": {
+        "x": 4480,
+        "y": -6877
+      }
+    },
+    {
+      "name": "Lewiston",
+      "location": {
+        "x": 4410,
+        "y": -7021
+      }
+    },
+    {
+      "name": "Portland",
+      "location": {
+        "x": 4366,
+        "y": -7025
+      }
+    },
+    {
+      "name": "Baltimore",
+      "location": {
+        "x": 3929,
+        "y": -7661
+      }
+    },
+    {
+      "name": "College Park",
+      "location": {
+        "x": 389900,
+        "y": -769300
+      }
+    },
+    {
+      "name": "Columbia",
+      "location": {
+        "x": 3921,
+        "y": -7686
+      }
+    },
+    {
+      "name": "Frederick",
+      "location": {
+        "x": 3942,
+        "y": -7742
+      }
+    },
+    {
+      "name": "Germantown",
+      "location": {
+        "x": 3918,
+        "y": -7726
+      }
+    },
+    {
+      "name": "Silver Spring",
+      "location": {
+        "x": 3899,
+        "y": -7703
+      }
+    },
+    {
+      "name": "Boston",
+      "location": {
+        "x": 4236,
+        "y": -7106
+      }
+    },
+    {
+      "name": "Cambridge",
+      "location": {
+        "x": 4237,
+        "y": -7110
+      }
+    },
+    {
+      "name": "Lowell",
+      "location": {
+        "x": 4264,
+        "y": -7132
+      }
+    },
+    {
+      "name": "Springfield",
+      "location": {
+        "x": 4210,
+        "y": -7259
+      }
+    },
+    {
+      "name": "Worcester",
+      "location": {
+        "x": 4226,
+        "y": -7180
+      }
+    },
+    {
+      "name": "Ann Arbor",
+      "location": {
+        "x": 4228,
+        "y": -8374
+      }
+    },
+    {
+      "name": "Detroit",
+      "location": {
+        "x": 4233,
+        "y": -8305
+      }
+    },
+    {
+      "name": "Grand Rapids",
+      "location": {
+        "x": 4296,
+        "y": -8567
+      }
+    },
+    {
+      "name": "Sterling Heights",
+      "location": {
+        "x": 4258,
+        "y": -8303
+      }
+    },
+    {
+      "name": "Warren",
+      "location": {
+        "x": 4249,
+        "y": -8303
+      }
+    },
+    {
+      "name": "Bloomington",
+      "location": {
+        "x": 4482,
+        "y": -9331
+      }
+    },
+    {
+      "name": "Duluth",
+      "location": {
+        "x": 4678,
+        "y": -9210
+      }
+    },
+    {
+      "name": "Minneapolis",
+      "location": {
+        "x": 4497,
+        "y": -9326
+      }
+    },
+    {
+      "name": "Rochester",
+      "location": {
+        "x": 4402,
+        "y": -9247
+      }
+    },
+    {
+      "name": "St. Paul",
+      "location": {
+        "x": 4495,
+        "y": -9310
+      }
+    },
+    {
+      "name": "Biloxi",
+      "location": {
+        "x": 3040,
+        "y": -8889
+      }
+    },
+    {
+      "name": "Gulfport",
+      "location": {
+        "x": 3037,
+        "y": -8909
+      }
+    },
+    {
+      "name": "Hattiesburg",
+      "location": {
+        "x": 3132,
+        "y": -8929
+      }
+    },
+    {
+      "name": "Jackson",
+      "location": {
+        "x": 3230,
+        "y": -9018
+      }
+    },
+    {
+      "name": "Southaven",
+      "location": {
+        "x": 3497,
+        "y": -9001
+      }
+    },
+    {
+      "name": "Columbia",
+      "location": {
+        "x": 3895,
+        "y": -9233
+      }
+    },
+    {
+      "name": "Independence",
+      "location": {
+        "x": 3907,
+        "y": -9441
+      }
+    },
+    {
+      "name": "Kansas City",
+      "location": {
+        "x": 3910,
+        "y": -9458
+      }
+    },
+    {
+      "name": "Springfield",
+      "location": {
+        "x": 3721,
+        "y": -9329
+      }
+    },
+    {
+      "name": "St. Louis",
+      "location": {
+        "x": 3863,
+        "y": -9020
+      }
+    },
+    {
+      "name": "Billings",
+      "location": {
+        "x": 4579,
+        "y": -10850
+      }
+    },
+    {
+      "name": "Bozeman",
+      "location": {
+        "x": 4568,
+        "y": -11105
+      }
+    },
+    {
+      "name": "Butte",
+      "location": {
+        "x": 4599,
+        "y": -11253
+      }
+    },
+    {
+      "name": "Missoula",
+      "location": {
+        "x": 4687,
+        "y": -11401
+      }
+    },
+    {
+      "name": "Poor Falls",
+      "location": {
+        "x": 4751,
+        "y": -11130
+      }
+    },
+    {
+      "name": "Bellevue",
+      "location": {
+        "x": 4115,
+        "y": -9592
+      }
+    },
+    {
+      "name": "Grand Island",
+      "location": {
+        "x": 4092,
+        "y": -9834
+      }
+    },
+    {
+      "name": "Kearney",
+      "location": {
+        "x": 4070,
+        "y": -9908
+      }
+    },
+    {
+      "name": "Lincoln",
+      "location": {
+        "x": 4081,
+        "y": -9668
+      }
+    },
+    {
+      "name": "Omaha",
+      "location": {
+        "x": 4126,
+        "y": -9601
+      }
+    },
+    {
+      "name": "Henderson",
+      "location": {
+        "x": 3604,
+        "y": -11503
+      }
+    },
+    {
+      "name": "Las Vegas",
+      "location": {
+        "x": 3617,
+        "y": -11514
+      }
+    },
+    {
+      "name": "Reno",
+      "location": {
+        "x": 3953,
+        "y": -11981
+      }
+    },
+    {
+      "name": "Sparks",
+      "location": {
+        "x": 3953,
+        "y": -11975
+      }
+    },
+    {
+      "name": "Concord",
+      "location": {
+        "x": 4321,
+        "y": -7154
+      }
+    },
+    {
+      "name": "Derry",
+      "location": {
+        "x": 4289,
+        "y": -7130
+      }
+    },
+    {
+      "name": "Manchester",
+      "location": {
+        "x": 4299,
+        "y": -7146
+      }
+    },
+    {
+      "name": "Nashua",
+      "location": {
+        "x": 4276,
+        "y": -7147
+      }
+    },
+    {
+      "name": "Rochester",
+      "location": {
+        "x": 4330,
+        "y": -7098
+      }
+    },
+    {
+      "name": "Edison",
+      "location": {
+        "x": 4052,
+        "y": -7441
+      }
+    },
+    {
+      "name": "Elizabeth",
+      "location": {
+        "x": 4066,
+        "y": -7421
+      }
+    },
+    {
+      "name": "Jersey City",
+      "location": {
+        "x": 4073,
+        "y": -7407
+      }
+    },
+    {
+      "name": "Newark",
+      "location": {
+        "x": 4073,
+        "y": -7417
+      }
+    },
+    {
+      "name": "Paterson",
+      "location": {
+        "x": 4092,
+        "y": -7416
+      }
+    },
+    {
+      "name": "South Orange",
+      "location": {
+        "x": 406500,
+        "y": -741300
+      }
+    },
+    {
+      "name": "Albuquerque",
+      "location": {
+        "x": 3508,
+        "y": -10665
+      }
+    },
+    {
+      "name": "Las Cruces",
+      "location": {
+        "x": 3232,
+        "y": -10676
+      }
+    },
+    {
+      "name": "Rio Rancho",
+      "location": {
+        "x": 3529,
+        "y": -10670
+      }
+    },
+    {
+      "name": "Roswell",
+      "location": {
+        "x": 3339,
+        "y": -10452
+      }
+    },
+    {
+      "name": "Santa Fe",
+      "location": {
+        "x": 3568,
+        "y": -10594
+      }
+    },
+    {
+      "name": "Brooklyn",
+      "location": {
+        "x": 4068,
+        "y": -7394
+      }
+    },
+    {
+      "name": "Buffalo",
+      "location": {
+        "x": 4289,
+        "y": -7888
+      }
+    },
+    {
+      "name": "New York City",
+      "location": {
+        "x": 4071,
+        "y": -7401
+      }
+    },
+    {
+      "name": "Queens",
+      "location": {
+        "x": 407100,
+        "y": -738700
+      }
+    },
+    {
+      "name": "Rochester",
+      "location": {
+        "x": 4316,
+        "y": -7761
+      }
+    },
+    {
+      "name": "Syracuse",
+      "location": {
+        "x": 4305,
+        "y": -7615
+      }
+    },
+    {
+      "name": "Yonkers",
+      "location": {
+        "x": 4094,
+        "y": -7387
+      }
+    },
+    {
+      "name": "Chapel Hill",
+      "location": {
+        "x": 359300,
+        "y": -790600
+      }
+    },
+    {
+      "name": "Charlotte",
+      "location": {
+        "x": 3523,
+        "y": -8084
+      }
+    },
+    {
+      "name": "Durham",
+      "location": {
+        "x": 3599,
+        "y": -7890
+      }
+    },
+    {
+      "name": "Greensboro",
+      "location": {
+        "x": 3607,
+        "y": -7979
+      }
+    },
+    {
+      "name": "Raleigh",
+      "location": {
+        "x": 3578,
+        "y": -7864
+      }
+    },
+    {
+      "name": "Winston-Salem",
+      "location": {
+        "x": 3610,
+        "y": -8026
+      }
+    },
+    {
+      "name": "Bismarck",
+      "location": {
+        "x": 4681,
+        "y": -10078
+      }
+    },
+    {
+      "name": "Fargo",
+      "location": {
+        "x": 4688,
+        "y": -9679
+      }
+    },
+    {
+      "name": "Grand Forks",
+      "location": {
+        "x": 4792,
+        "y": -9707
+      }
+    },
+    {
+      "name": "Minot",
+      "location": {
+        "x": 4823,
+        "y": -10130
+      }
+    },
+    {
+      "name": "West Fargo",
+      "location": {
+        "x": 4687,
+        "y": -9690
+      }
+    },
+    {
+      "name": "Akron",
+      "location": {
+        "x": 4108,
+        "y": -8152
+      }
+    },
+    {
+      "name": "Cincinnati",
+      "location": {
+        "x": 3910,
+        "y": -8451
+      }
+    },
+    {
+      "name": "Cleveland",
+      "location": {
+        "x": 4150,
+        "y": -8169
+      }
+    },
+    {
+      "name": "Columbus",
+      "location": {
+        "x": 3998,
+        "y": -8299
+      }
+    },
+    {
+      "name": "Toledo",
+      "location": {
+        "x": 4166,
+        "y": -8358
+      }
+    },
+    {
+      "name": "Broken Arrow",
+      "location": {
+        "x": 3605,
+        "y": -9579
+      }
+    },
+    {
+      "name": "Lawton",
+      "location": {
+        "x": 3461,
+        "y": -9839
+      }
+    },
+    {
+      "name": "Norman",
+      "location": {
+        "x": 3522,
+        "y": -9744
+      }
+    },
+    {
+      "name": "Oklahoma City",
+      "location": {
+        "x": 3547,
+        "y": -9752
+      }
+    },
+    {
+      "name": "Tulsa",
+      "location": {
+        "x": 3615,
+        "y": -9599
+      }
+    },
+    {
+      "name": "Corvallis",
+      "location": {
+        "x": 443500,
+        "y": -1232700
+      }
+    },
+    {
+      "name": "Eugene",
+      "location": {
+        "x": 4406,
+        "y": -12311
+      }
+    },
+    {
+      "name": "Gresham",
+      "location": {
+        "x": 4550,
+        "y": -12243
+      }
+    },
+    {
+      "name": "Hillsboro",
+      "location": {
+        "x": 4552,
+        "y": -12299
+      }
+    },
+    {
+      "name": "Portland",
+      "location": {
+        "x": 4552,
+        "y": -12268
+      }
+    },
+    {
+      "name": "Salem",
+      "location": {
+        "x": 4494,
+        "y": -12304
+      }
+    },
+    {
+      "name": "Allentown",
+      "location": {
+        "x": 4060,
+        "y": -7547
+      }
+    },
+    {
+      "name": "Erie",
+      "location": {
+        "x": 4212,
+        "y": -8009
+      }
+    },
+    {
+      "name": "Philadelphia",
+      "location": {
+        "x": 3995,
+        "y": -7516
+      }
+    },
+    {
+      "name": "Pittsburgh",
+      "location": {
+        "x": 4044,
+        "y": -7999
+      }
+    },
+    {
+      "name": "Reading",
+      "location": {
+        "x": 4034,
+        "y": -7593
+      }
+    },
+    {
+      "name": "Tempe",
+      "location": {
+        "x": 401100,
+        "y": -752100
+      }
+    },
+    {
+      "name": "Villanova",
+      "location": {
+        "x": 400400,
+        "y": -752300
+      }
+    },
+    {
+      "name": "Cranston",
+      "location": {
+        "x": 4178,
+        "y": -7147
+      }
+    },
+    {
+      "name": "East Providence",
+      "location": {
+        "x": 4181,
+        "y": -7135
+      }
+    },
+    {
+      "name": "Pawtucket",
+      "location": {
+        "x": 4187,
+        "y": -7138
+      }
+    },
+    {
+      "name": "Providence",
+      "location": {
+        "x": 4182,
+        "y": -7142
+      }
+    },
+    {
+      "name": "South Kingstown",
+      "location": {
+        "x": 414600,
+        "y": -714900
+      }
+    },
+    {
+      "name": "Warwick",
+      "location": {
+        "x": 4171,
+        "y": -7142
+      }
+    },
+    {
+      "name": "Charleston",
+      "location": {
+        "x": 3278,
+        "y": -7993
+      }
+    },
+    {
+      "name": "Columbia",
+      "location": {
+        "x": 3404,
+        "y": -8090
+      }
+    },
+    {
+      "name": "Mount Pleasant",
+      "location": {
+        "x": 3280,
+        "y": -7989
+      }
+    },
+    {
+      "name": "North Charleston",
+      "location": {
+        "x": 3288,
+        "y": -8002
+      }
+    },
+    {
+      "name": "Rock Hill",
+      "location": {
+        "x": 3493,
+        "y": -8103
+      }
+    },
+    {
+      "name": "Aberdeen",
+      "location": {
+        "x": 4547,
+        "y": -9848
+      }
+    },
+    {
+      "name": "Brookings",
+      "location": {
+        "x": 4431,
+        "y": -9679
+      }
+    },
+    {
+      "name": "Rapid City",
+      "location": {
+        "x": 4408,
+        "y": -10323
+      }
+    },
+    {
+      "name": "Sioux Falls",
+      "location": {
+        "x": 4355,
+        "y": -9673
+      }
+    },
+    {
+      "name": "Watertown",
+      "location": {
+        "x": 4490,
+        "y": -9712
+      }
+    },
+    {
+      "name": "Chattanooga",
+      "location": {
+        "x": 3505,
+        "y": -8531
+      }
+    },
+    {
+      "name": "Clarksville",
+      "location": {
+        "x": 3653,
+        "y": -8736
+      }
+    },
+    {
+      "name": "Knoxville",
+      "location": {
+        "x": 3596,
+        "y": -8392
+      }
+    },
+    {
+      "name": "Memphis",
+      "location": {
+        "x": 3515,
+        "y": -9005
+      }
+    },
+    {
+      "name": "Nashville",
+      "location": {
+        "x": 3616,
+        "y": -8678
+      }
+    },
+    {
+      "name": "Austin",
+      "location": {
+        "x": 3027,
+        "y": -9774
+      }
+    },
+    {
+      "name": "College Station",
+      "location": {
+        "x": 306200,
+        "y": -963400
+      }
+    },
+    {
+      "name": "Dallas",
+      "location": {
+        "x": 3278,
+        "y": -9680
+      }
+    },
+    {
+      "name": "Fort Worth",
+      "location": {
+        "x": 3275,
+        "y": -9733
+      }
+    },
+    {
+      "name": "Houston",
+      "location": {
+        "x": 2976,
+        "y": -9537
+      }
+    },
+    {
+      "name": "Lubbock",
+      "location": {
+        "x": 335800,
+        "y": -1018800
+      }
+    },
+    {
+      "name": "San Antonio",
+      "location": {
+        "x": 2942,
+        "y": -9849
+      }
+    },
+    {
+      "name": "Waco",
+      "location": {
+        "x": 315400,
+        "y": -971500
+      }
+    },
+    {
+      "name": "Logan",
+      "location": {
+        "x": 417400,
+        "y": -1118400
+      }
+    },
+    {
+      "name": "Ogden",
+      "location": {
+        "x": 412200,
+        "y": -1119700
+      }
+    },
+    {
+      "name": "Orem",
+      "location": {
+        "x": 4029,
+        "y": -11170
+      }
+    },
+    {
+      "name": "Provo",
+      "location": {
+        "x": 4024,
+        "y": -11166
+      }
+    },
+    {
+      "name": "Salt Lake City",
+      "location": {
+        "x": 4076,
+        "y": -11189
+      }
+    },
+    {
+      "name": "Sandy",
+      "location": {
+        "x": 4057,
+        "y": -11186
+      }
+    },
+    {
+      "name": "West Valley City",
+      "location": {
+        "x": 4069,
+        "y": -11200
+      }
+    },
+    {
+      "name": "Barre",
+      "location": {
+        "x": 4419,
+        "y": -7250
+      }
+    },
+    {
+      "name": "Burlington",
+      "location": {
+        "x": 4448,
+        "y": -7322
+      }
+    },
+    {
+      "name": "Montpelier",
+      "location": {
+        "x": 4426,
+        "y": -7257
+      }
+    },
+    {
+      "name": "Rutland",
+      "location": {
+        "x": 4361,
+        "y": -7297
+      }
+    },
+    {
+      "name": "South Burlington",
+      "location": {
+        "x": 4447,
+        "y": -7322
+      }
+    },
+    {
+      "name": "Arlington",
+      "location": {
+        "x": 3888,
+        "y": -7711
+      }
+    },
+    {
+      "name": "Charlottesville",
+      "location": {
+        "x": 380300,
+        "y": -784800
+      }
+    },
+    {
+      "name": "Chesapeake",
+      "location": {
+        "x": 3676,
+        "y": -7629
+      }
+    },
+    {
+      "name": "Norfolk",
+      "location": {
+        "x": 3685,
+        "y": -7629
+      }
+    },
+    {
+      "name": "Richmond",
+      "location": {
+        "x": 3754,
+        "y": -7743
+      }
+    },
+    {
+      "name": "Virginia Beach",
+      "location": {
+        "x": 3685,
+        "y": -7598
+      }
+    },
+    {
+      "name": "Bellevue",
+      "location": {
+        "x": 4761,
+        "y": -12220
+      }
+    },
+    {
+      "name": "Pullman",
+      "location": {
+        "x": 467300,
+        "y": -1171600
+      }
+    },
+    {
+      "name": "Seattle",
+      "location": {
+        "x": 4761,
+        "y": -12233
+      }
+    },
+    {
+      "name": "Spokane",
+      "location": {
+        "x": 4766,
+        "y": -11743
+      }
+    },
+    {
+      "name": "Tacoma",
+      "location": {
+        "x": 4725,
+        "y": -12244
+      }
+    },
+    {
+      "name": "Vancouver",
+      "location": {
+        "x": 4563,
+        "y": -12265
+      }
+    },
+    {
+      "name": "Charleston",
+      "location": {
+        "x": 3835,
+        "y": -8164
+      }
+    },
+    {
+      "name": "Huntington",
+      "location": {
+        "x": 3842,
+        "y": -8244
+      }
+    },
+    {
+      "name": "Morgantown",
+      "location": {
+        "x": 3963,
+        "y": -7995
+      }
+    },
+    {
+      "name": "Parkersburg",
+      "location": {
+        "x": 3927,
+        "y": -8156
+      }
+    },
+    {
+      "name": "Wheeling",
+      "location": {
+        "x": 4007,
+        "y": -8072
+      }
+    },
+    {
+      "name": "Green Bay",
+      "location": {
+        "x": 4452,
+        "y": -8802
+      }
+    },
+    {
+      "name": "Kenosha",
+      "location": {
+        "x": 4258,
+        "y": -8786
+      }
+    },
+    {
+      "name": "Madison",
+      "location": {
+        "x": 4307,
+        "y": -8938
+      }
+    },
+    {
+      "name": "Milwaukee",
+      "location": {
+        "x": 4304,
+        "y": -8791
+      }
+    },
+    {
+      "name": "Racine",
+      "location": {
+        "x": 4273,
+        "y": -8778
+      }
+    },
+    {
+      "name": "Casper",
+      "location": {
+        "x": 4286,
+        "y": -10631
+      }
+    },
+    {
+      "name": "Cheyenne",
+      "location": {
+        "x": 4114,
+        "y": -10482
+      }
+    },
+    {
+      "name": "Gillette",
+      "location": {
+        "x": 4429,
+        "y": -10550
+      }
+    },
+    {
+      "name": "Laramie",
+      "location": {
+        "x": 4131,
+        "y": -10559
+      }
+    },
+    {
+      "name": "Rock Springs",
+      "location": {
+        "x": 4159,
+        "y": -10920
+      }
+    },
+    {
+      "name": "Washington",
+      "location": {
+        "x": 3890,
+        "y": -7704
+      }
+    }
+  ]
+}

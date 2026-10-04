@@ -1,0 +1,15 @@
+#saveProgress{display:none!important}
+.save-load-league-dialog{width:min(760px,94vw)}
+.save-load-list{display:grid;gap:10px;margin:16px 0}
+.save-load-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.save-load-slot-info{flex:1 1 280px;min-width:0;cursor:default}
+.save-load-slot-info strong,.save-load-slot-info small{display:block}
+.save-load-slot-info small{margin-top:6px}
+.save-load-actions{display:flex;gap:8px;flex-wrap:wrap}
+.save-load-actions button{min-height:42px}
+.draft-dialog-bridge{visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+.draft-dialog-bridge::backdrop{background:transparent!important}
+@media(max-width:560px){
+ .save-load-actions{width:100%}
+ .save-load-actions button{flex:1 1 0}
+}

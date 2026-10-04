@@ -1,0 +1,15 @@
+
+.tournament-courts{margin-top:28px;padding:20px;border:3px solid #299bd7;background:#144f99;scroll-margin-top:20px}
+.tournament-courts>h2{text-align:center;margin:0 0 20px;text-transform:uppercase;letter-spacing:2px}
+.tournament-court-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.tournament-court-card{display:block;min-width:0;width:100%;padding:12px;border:3px solid #299bd7;background:#103b70;color:white;cursor:pointer}
+.tournament-court-card:hover,.tournament-court-card:focus-visible{border-color:#fff;outline:2px solid #26b3ef;outline-offset:3px}
+.tournament-court-label{display:block;font-weight:bold;text-transform:uppercase;margin-bottom:10px}
+.tournament-court-card .court-preview{margin:0;padding:4px;border:2px solid #299bd7}
+.tournament-court-card .court-preview h3,.tournament-court-card .court-preview-note{display:none}
+.tournament-court-card .court-preview-viewport{overflow:hidden}
+.tournament-court-card .court-preview canvas{width:100%;height:auto;max-width:100%;aspect-ratio:321/161}
+.tournament-court-status{display:block;font-size:12px;margin-top:8px}
+.tournament-court-actions{display:flex;gap:12px;margin-bottom:18px}
+@media(max-width:1100px){.tournament-court-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.tournament-court-grid{grid-template-columns:minmax(0,1fr)}.tournament-courts{padding:12px}}

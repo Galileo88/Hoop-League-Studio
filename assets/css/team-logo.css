@@ -1,0 +1,6 @@
+.team-icon{display:inline-flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;background:transparent;border:0;outline:0;box-shadow:none}
+.team-icon canvas,.team-icon img{display:block;width:100%;height:100%;object-fit:contain}
+.team-icon canvas{image-rendering:pixelated}
+.team-icon img{image-rendering:auto}
+.team-config-logo{display:flex;align-items:center;gap:16px;margin:8px 0 20px;font-weight:700}
+.team-config-logo .team-icon-large{width:80px;height:80px}

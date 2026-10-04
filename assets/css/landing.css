@@ -1,0 +1,46 @@
+:root{font-family:'Segoe UI',Arial,sans-serif;color:#f0f7ff;background:#071722;color-scheme:dark;font-synthesis:none}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;min-height:100vh;background-color:#071722;background-image:linear-gradient(90deg,#10304430 1px,transparent 1px),linear-gradient(#10304430 1px,transparent 1px);background-size:32px 32px}
+.landing{width:min(100% - 48px,1140px);margin:auto;padding:24px 0 40px}
+.intro{text-align:center;margin-bottom:26px}
+.logo{display:block;width:360px;max-width:100%;height:auto;margin:0 auto 16px;image-rendering:auto}
+h1,h2,.action{font-family:'Segoe UI',Arial,sans-serif;text-transform:uppercase;font-weight:800}
+h1{font-size:30px;line-height:1.2;margin:0 0 10px;letter-spacing:1px;text-shadow:3px 3px 0 #03101c}
+.intro p{color:#abc8e6;font-size:16px;line-height:1.5;margin:0}
+.options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:20px}
+.option{position:relative;display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:24px 22px 18px;text-decoration:none;color:inherit;border:2px solid #238bce;border-radius:4px;background:#0d3971;box-shadow:4px 4px 0 #03101c}
+.option:hover{border-color:#79fff4}
+.option:focus-visible,.action:focus-visible,.mac-help summary:focus-visible{outline:3px solid #fff;outline-offset:5px}
+.platform-icon{display:grid;place-items:center;width:44px;height:44px;color:#79fff4;margin-bottom:14px}
+.platform-icon svg{width:32px;height:32px;fill:currentColor}
+.browser svg,.mac svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter}
+h2{font-size:25px;line-height:1.2;margin:0 0 12px;letter-spacing:1px;text-shadow:2px 2px 0 #08264a}
+.option p{color:#bcd8f2;font-size:15px;line-height:1.5;margin:0 0 22px}
+.action{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:12px;margin-top:auto;border:2px solid #79fff4;background:#1455a5;color:#fff;box-shadow:3px 3px 0 #062b50;font-size:14px;line-height:1.4;text-decoration:none}
+.option>.action{margin-top:0}
+.option:hover .action{background:#1969c3}
+.action>span{font-size:22px;line-height:1}
+.details{display:block;font-size:12px;color:#abc8e6;margin-top:14px;line-height:1.5}
+.mac-downloads{width:100%;margin-top:auto}
+.mac-downloads .action{text-decoration:none}
+.download-note{display:block;margin:8px 0 14px;color:#bcd8f2;font-size:12px;line-height:1.5}
+.mac-help{font-size:13px;line-height:1.5;width:100%}
+.mac-help summary{cursor:pointer;color:#79fff4}
+.mac-help p{font-size:13px;margin:10px 0 0}
+.mac-help .mac-downloads{margin-top:12px}
+.option>p{min-height:45px}
+.text-link{position:absolute;bottom:12px;padding:0;border:0;background:none;color:#79fff4;font:12px 'Segoe UI',Arial,sans-serif;text-decoration:underline;cursor:pointer}
+.text-link:focus-visible,dialog button:focus-visible{outline:3px solid white;outline-offset:4px}
+dialog{width:min(440px,calc(100% - 32px));padding:30px;border:2px solid #238bce;border-radius:8px;background:#0d2744;color:#f0f7ff;box-shadow:0 20px 80px #0008}
+dialog::backdrop{background:#020c16bb}
+dialog h2{font-size:23px;padding-right:25px}
+dialog p{color:#bcd8f2;font-size:14px;line-height:1.6;margin:12px 0 22px}
+dialog .download-note{margin:8px 0 20px;font-size:12px}
+.dialog-close{position:absolute;right:12px;top:8px;border:0;background:none;color:white;font-size:30px;cursor:pointer}
+.install-note{width:100%;margin:14px 0 0;color:#abc8e6;font-size:13px;line-height:1.5}
+.install-note summary{cursor:pointer;width:fit-content}
+.option .install-note p{margin:8px 0 0;font-size:13px;line-height:1.5}
+.install-note a{color:#79fff4;text-underline-offset:3px}
+.install-note a:focus-visible,.install-note summary:focus-visible{outline:3px solid white;outline-offset:4px}
+@media(max-width:800px){.landing{width:min(100% - 32px,480px);padding-top:20px}.intro{margin-bottom:24px}h1{font-size:25px}.options{grid-template-columns:1fr;gap:18px}.option{padding:20px 20px 18px}.option>p{min-height:0}.logo{width:300px}}
