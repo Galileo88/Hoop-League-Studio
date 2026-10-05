@@ -236,34 +236,55 @@ function syncSettingFields(){
   const value=get(path);if(input.syncValue){input.syncValue();continue}if(input.type==='checkbox')input.checked=value;else input.value=String(typeof value==='boolean'?Number(value):value);
  }
 }
+const LOTTERY_ODDS_SLOTS=16;
 const lotteryModes=new WeakMap();
 function lotteryMode(data){
  if(!lotteryModes.has(data))lotteryModes.set(data,{teams:false,odds:false});
  return lotteryModes.get(data);
 }
+function normalizeLotterySettings(data){
+ if(!data?.season)return false;
+ const season=data.season,maxTeams=Math.min(LOTTERY_ODDS_SLOTS,Array.isArray(data.teams)?data.teams.length:LOTTERY_ODDS_SLOTS);
+ const count=Math.max(0,Math.min(maxTeams,Math.floor(Number(season.lotteryTeams)||0)));
+ const source=Array.isArray(season.lotteryOdds)?season.lotteryOdds:[],odds=Array.from({length:LOTTERY_ODDS_SLOTS},(_,i)=>{
+  if(i>=count)return 0;
+  const value=Number(source[i]);return Number.isFinite(value)&&value>=0?Math.round(value):0;
+ });
+ const changed=season.lotteryTeams!==count||!Array.isArray(season.lotteryOdds)||season.lotteryOdds.length!==LOTTERY_ODDS_SLOTS||odds.some((value,i)=>season.lotteryOdds[i]!==value);
+ season.lotteryTeams=count;season.lotteryOdds=odds;return changed;
+}
+function validateLotterySettings(data){
+ normalizeLotterySettings(data);
+ if(data?.leagueType!==0||!data?.season?.lotteryTeams)return;
+ const count=data.season.lotteryTeams,total=data.season.lotteryOdds.slice(0,count).reduce((sum,value)=>sum+value,0);
+ if(total!==1000)throw Error('Lottery odds must total 100.0% across the '+count+' active lottery teams. Current total: '+(total/10).toFixed(1)+'%.');
+}
 function weightedLotteryOdds(count){
- count=Math.max(0,Math.min(64,Math.floor(Number(count)||0)));
+ count=Math.max(0,Math.min(LOTTERY_ODDS_SLOTS,Math.floor(Number(count)||0)));
+ if(!count)return Array(LOTTERY_ODDS_SLOTS).fill(0);
  const total=count*(count+1)/2;
  const shares=Array.from({length:count},(_,i)=>1000*(count-i)/total);
  const odds=shares.map(Math.floor);
  const order=shares.map((value,i)=>({i,remainder:value-odds[i]})).sort((a,b)=>b.remainder-a.remainder||a.i-b.i);
  for(let left=1000-odds.reduce((sum,value)=>sum+value,0),i=0;i<left&&i<order.length;i++)odds[order[i].i]++;
- return odds;
+ return [...odds,...Array(LOTTERY_ODDS_SLOTS-count).fill(0)];
 }
 function applyLotteryDefaults(data){
- if(data.leagueType!==0||!data.season)return;
+ if(!data?.season)return;
  const mode=lotteryMode(data),season=data.season;
- if(mode.teams)season.lotteryTeams=Math.max(0,data.teams.length-Math.max(0,Math.floor(Number(season.playoffTeams)||0)));
- if(mode.odds)season.lotteryOdds=weightedLotteryOdds(season.lotteryTeams);
+ if(data.leagueType===0&&mode.teams)season.lotteryTeams=Math.max(0,data.teams.length-Math.max(0,Math.floor(Number(season.playoffTeams)||0)));
+ normalizeLotterySettings(data);
+ if(data.leagueType===0&&mode.odds)season.lotteryOdds=weightedLotteryOdds(season.lotteryTeams);
 }
 function updateLotterySetting(path,value){
  const mode=lotteryMode(league);
  if(path[0]==='season'&&path[1]==='lotteryTeams'){
   mode.teams=false;
-  league.season.lotteryTeams=Math.max(0,Math.min(league.teams.length,Math.floor(Number(value)||0)));
+  league.season.lotteryTeams=Math.max(0,Math.min(LOTTERY_ODDS_SLOTS,league.teams.length,Math.floor(Number(value)||0)));
  }
  if(path[0]==='season'&&path[1]==='lotteryOdds')mode.odds=false;
  if(path[0]==='leagueType'||path[0]==='season'&&['lotteryTeams','playoffTeams'].includes(path[1]))applyLotteryDefaults(league);
+ else if(path[0]==='season'&&path[1]==='lotteryOdds')normalizeLotterySettings(league);
  for(const node of document.querySelectorAll('[data-lottery-controls]'))node.syncLottery();
  if(path[0]==='leagueType'||path[0]==='season'&&['lotteryTeams','playoffTeams'].includes(path[1])){
   for(const node of document.querySelectorAll('[data-lottery-odds]'))node.syncOdds();
@@ -733,8 +754,8 @@ function renderNumericControl(parent,key,value,path){
  if(typeof value!=='number'||!range&&!bounded&&!hof&&!extra)return false;
  const weight=path[0]==='awards'&&(/^[A-Z]+$/.test(key)||key==='HOFValue'||key==='TimeWon'),odds=path[1]==='lotteryOdds';
  const scale=odds?10:1;
- const totalGames=path.length===2&&path[0]==='season'&&key==='totalGames';
- const min=totalGames?29:bounded?-5:weight?-Infinity:0,max=totalGames?100:range||odds||country?100:bounded?5:Infinity,step=range?5:weight||odds?0.1:1;
+ const totalGames=path.length===2&&path[0]==='season'&&key==='totalGames',lotteryTeams=path.length===2&&path[0]==='season'&&key==='lotteryTeams';
+ const min=totalGames?29:bounded?-5:weight?-Infinity:0,max=totalGames?100:lotteryTeams?Math.min(LOTTERY_ODDS_SLOTS,league.teams.length):range||odds||country?100:bounded?5:Infinity,step=range?5:weight||odds?0.1:1;
  const wrap=el('div','field'),row=el('div','number-control'),input=el('input'),out=el('output');
  wrap.append(el('span','',country?'Percentage (%)':odds?'Seed '+(Number(key)+1)+' (%)':path[1]==='seriesLength'?'Round '+(Number(key)+1):path[0]==='simulationSliders'&&key==='dunkAccuracy'?'Dunk Accuracy':label(key)));input.type=range?'range':'number';input.min=String(min);if(Number.isFinite(max))input.max=String(max);input.step=String(step);input.value=String(value);input.dataset.path=JSON.stringify(path);input.setAttribute('aria-label',label(key));
  const minus=el('button','','−'),plus=el('button','','+');minus.type=plus.type='button';
@@ -964,10 +985,10 @@ function renderDraft(parent,season){
  for(const key of ['lotteryTeams','fantasyDraft'])if(Object.hasOwn(season,key))field(fields,key,season[key],['season',key]);
  const odds=el('details'),summary=el('summary'),rows=el('div','fields');odds.dataset.lotteryOdds='true';odds.append(summary,rows);parent.append(odds);
  odds.syncOdds=()=>{
-  const count=Math.max(0,Math.floor(Number(season.lotteryTeams)||0));
+  normalizeLotterySettings(league);
+  const count=season.lotteryTeams;
   summary.textContent='Lottery Odds · '+count+' teams';rows.replaceChildren();
-  if(!Array.isArray(season.lotteryOdds))season.lotteryOdds=[];
-  for(let i=0;i<count;i++){if(season.lotteryOdds[i]==null)season.lotteryOdds[i]=0;field(rows,String(i),season.lotteryOdds[i],['season','lotteryOdds',i])}
+  for(let i=0;i<count;i++)field(rows,String(i),season.lotteryOdds[i],['season','lotteryOdds',i]);
  };odds.syncOdds();
 }
 function renderSeason(parent,obj){
@@ -2328,7 +2349,7 @@ $('#saveProgress').onclick=()=>openDraftSlots('save');
 $('#restoreProgress').onclick=()=>openDraftSlots('restore');
 
 $('#gettingStartedNav').onclick=()=>{if(canNavigate()){view='home';render()}};$('#leagueNav').onclick=()=>{if(canNavigate()){view='league';render()}};$('#sidebarTemplate').onclick=()=>$('#new').click();$('#sidebarImport').onclick=()=>$('#import').click();$('#sidebarRestore').onclick=()=>$('#restoreProgress').click();$('#imagesNav').onclick=()=>{if(canNavigate()){view='images';render()}};$('#teamSearch').oninput=()=>league&&listTeams();$('#import').onclick=openLeagueImport;$('#new').onclick=async()=>{if(dirty&&!confirm('Discard current edits and create a new league?'))return;const settings=await chooseNewLeagueSettings();if(!settings)return;const button=$('#new');button.disabled=true;const genderLabel=['male','female','mixed'][settings.gender];$('#status').textContent='Generating '+(settings.type===1?'College':'Pro')+' '+genderLabel+' teams and players…';try{const next=await generateNewLeague(settings.type,settings.gender);load(next,true);render();toast((settings.type===1?'College':'Pro')+' '+genderLabel+' league created with '+next.teams.length+' fresh teams and '+next.teams.reduce((sum,team)=>sum+team.roster.length,0)+' generated players.')}catch(e){$('#status').textContent=league?'Ready to edit':'Could not create league';toast(e.message);alert(e.message)}finally{button.disabled=false}};window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
-$('#export').onclick=async()=>{if(!league||!canNavigate())return;if(league.teams.length<4){toast('A league needs at least 4 teams before export.');return}syncTeamCountMeta();const original=JSON.stringify(league);$('#export').disabled=true;$('#status').textContent='Checking images…';try{validateActiveRosterIds(league);const ready=await prepareImages(league,assets);validateActiveRosterIds(ready);if(JSON.stringify(league)!==original)throw Error('The league changed during image checks. Export again to include your latest edits.');enforcePlayInRounds(ready);lotteryModes.set(ready,{...lotteryMode(league)});league=ready;saveFile((league.leagueName||'League').replace(/[<>:"/\\|?*]/g,'_')+'.txt',JSON.stringify(ready));dirty=false;$('#status').textContent='Exported';render();toast('Exported with verified image links and logo dimensions.')}catch(e){$('#status').textContent='Export needs attention';toast(e.message);alert(e.message)}finally{$('#export').disabled=false}};
+$('#export').onclick=async()=>{if(!league||!canNavigate())return;if(league.teams.length<4){toast('A league needs at least 4 teams before export.');return}syncTeamCountMeta();const original=JSON.stringify(league);$('#export').disabled=true;$('#status').textContent='Checking images…';try{validateActiveRosterIds(league);const ready=await prepareImages(league,assets);validateActiveRosterIds(ready);if(JSON.stringify(league)!==original)throw Error('The league changed during image checks. Export again to include your latest edits.');enforcePlayInRounds(ready);lotteryModes.set(ready,{...lotteryMode(league)});validateLotterySettings(ready);league=ready;saveFile((league.leagueName||'League').replace(/[<>:"/\\|?*]/g,'_')+'.txt',JSON.stringify(ready));dirty=false;$('#status').textContent='Exported';render();toast('Exported with verified image links and logo dimensions.')}catch(e){$('#status').textContent='Export needs attention';toast(e.message);alert(e.message)}finally{$('#export').disabled=false}};
 
 function pickerTeamForPath(path){
  return path?.[0]==='teams'||path?.[0]==='starTeams'?league?.[path[0]]?.[path[1]]:null;
