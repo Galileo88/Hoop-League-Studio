@@ -1,4 +1,4 @@
-const CACHE_NAME='hls-pwa-v263-trophy-shading';
+const CACHE_NAME='hls-pwa-v263-college-awards';
 const CORE=[
   './',
   './index.html',

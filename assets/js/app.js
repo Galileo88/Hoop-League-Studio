@@ -981,7 +981,7 @@ function renderSeason(parent,obj){
   else if(title==='Salary'){const capFields=el('div','fields');panel.append(capFields);if(Object.hasOwn(obj,'salaryCap'))field(capFields,'salaryCap',obj.salaryCap,['season','salaryCap']);panel.append(el('h3','salary-max-heading','Max Contract'));const maxFields=el('div','fields salary-max-fields');panel.append(maxFields);for(const [i,value]of (obj.maxContract||[]).entries())field(maxFields,String(i),value,['season','maxContract',i])}
   else if(title==='Optimization'){const preset=el('div','fields');panel.append(preset);if(Object.hasOwn(obj,'optimization'))field(preset,'optimization',obj.optimization,['season','optimization']);renderOptimization(panel)}
   else if(title==='General'){drawFields(panel,obj,keys,['season']);const generalFields=panel.querySelector(':scope > .fields');if(generalFields){const teamCount=renderTeamCountControl(generalFields);generalFields.insertBefore(teamCount,generalFields.children[1]||null)}}
-  else drawFields(panel,obj,keys,['season']);
+  else drawFields(panel,obj,league.leagueType===1?keys.filter(key=>key!=='HOFbar'):keys,['season']);
 
   if(title==='General'){const genderFields=el('div','fields season-gender-fields');panel.append(genderFields);if(league.meta&&Object.hasOwn(league.meta,'gender'))field(genderFields,'gender',league.meta.gender,['meta','gender'])}
   if(title==='General'){
