@@ -1,4 +1,4 @@
-const CACHE_NAME='hls-pwa-v263-roster-actions';
+const CACHE_NAME='hls-pwa-v263-allowed-styles';
 const CORE=[
   './',
   './index.html',
@@ -30,6 +30,8 @@ const CORE=[
   './assets/js/generation-prototype.js',
   './assets/js/player-generation-skills.js',
   './assets/js/team-generator.js',
+  './assets/js/allowed-styles.js',
+  './assets/js/style-policy.js',
   './data/generation-prototype.json',
   './data/team-generation-blueprints.json',
   './data/generation-appearance.json',
