@@ -1,4 +1,4 @@
-const CACHE_NAME='hls-pwa-v263-unique-player-names';
+const CACHE_NAME='hls-pwa-v263-trophy-shading';
 const CORE=[
   './',
   './index.html',

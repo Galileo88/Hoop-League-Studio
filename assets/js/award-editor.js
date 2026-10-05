@@ -6,10 +6,10 @@ const labels={name:'Award name',shortName:'Short name',enabled:'Award enabled',p
 const trophyImages=new Map();
 
 const trophyPalette={
- '237,172,55':['primaryC',0], '229,112,40':['primaryC',-.3], '231,223,107':['primaryC',.35],
- '163,172,190':['secondaryC',0], '103,112,139':['secondaryC',-.35], '219,224,231':['secondaryC',.6],
- '38,36,58':['baseC',0], '20,16,32':['baseC',-.45], '57,58,86':['baseC',.18],
- '227,172,55':['plateC',0], '221,223,107':['plateC',.35]
+ '237,172,55':['primaryC',1], '229,112,40':['primaryC',.7], '231,223,107':['primaryC',1.3],
+ '163,172,190':['secondaryC',1], '103,112,139':['secondaryC',.7], '219,224,231':['secondaryC',1.3],
+ '38,36,58':['baseC',1], '20,16,32':['baseC',.7], '57,58,86':['baseC',1.3],
+ '227,172,55':['plateC',1], '221,223,107':['plateC',1.3]
 };
 function awardColor(value,fallback){return /^#?[a-f0-9]{6}$/i.test(value||'')?String(value).replace('#',''):fallback}
 function paintTrophy(source,award,resolve){
@@ -18,7 +18,9 @@ function paintTrophy(source,award,resolve){
  const defaults={primaryC:'EDAC37',secondaryC:'A3ACBE',baseC:'26243A',plateC:'E3AC37'};
  for(let i=0;i<data.data.length;i+=4){if(!data.data[i+3])continue;const group=trophyPalette[Array.from(data.data.slice(i,i+3)).join(',')];if(!group)continue;
   const [key,shade]=group,hex=awardColor(resolve(award[key],key),defaults[key]);
-  for(let c=0;c<3;c++){const base=parseInt(hex.slice(c*2,c*2+2),16);data.data[i+c]=Math.round(shade<0?base*(1+shade):base+(255-base)*shade)}
+  // Match the game's color-swap shader: highlights and shadows multiply the
+  // selected color by 1.3 and 0.7; highlights do not blend toward white.
+  for(let c=0;c<3;c++){const base=parseInt(hex.slice(c*2,c*2+2),16);data.data[i+c]=Math.min(255,Math.round(base*shade))}
  }ctx.putImageData(data,0,0);return canvas.toDataURL();
 }
 window.renderAwardEditor=function(parent,award,path,{el,field,get,set,resolveColor,leagueType=0}){
