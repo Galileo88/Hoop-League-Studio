@@ -1,4 +1,4 @@
-const CACHE_NAME='hls-pwa-v265-country-generation';
+const CACHE_NAME='hls-pwa-v266-playoff-rounds';
 const CORE=[
   './',
   './index.html',
