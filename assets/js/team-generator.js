@@ -4,9 +4,36 @@
   const core=typeof module!=='undefined'&&module.exports?require('./generation-prototype.js'):window.HLSGenerationPrototype;
   const ratings=typeof module!=='undefined'&&module.exports?require('./star-rating.js'):window.HLSRatings;
   const skills=typeof module!=='undefined'&&module.exports?require('./player-generation-skills.js'):window.HLSGenerationSkills;
-  const defaultSkills=typeof module!=='undefined'&&module.exports?require('./data/generation-skills.json'):null;
+  const defaultSkills=typeof module!=='undefined'&&module.exports?require('../../data/generation-skills.json'):null;
   const clone=value=>structuredClone(value),pick=(items,rng)=>items[rng.int(0,items.length)];
   const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
+  const personName=p=>(p.fn+' '+p.ln).trim().toLowerCase();
+  function reservedNames(source){
+    const names=new Set();
+    function visit(value){
+      if(!value||typeof value!=='object')return;
+      if(value.fn&&value.ln)names.add(personName(value));
+      for(const child of Object.values(value))if(child&&typeof child==='object')visit(child);
+    }
+    visit(source);return names;
+  }
+  function reserveTeamNames(team,data,names,rng){
+    for(const person of [...team.roster,...team.frontOffice.staff,...team.frontOffice.announcers]){
+      if(names.has(personName(person))){
+        const first=person.gender===1?data.names.femaleFirst:data.names.first;
+        const last=person.gender===1&&data.names.femaleLast.length?data.names.femaleLast:data.names.last;
+        const start=rng.int(0,first.length*last.length);
+        let found=false;
+        for(let n=0;n<first.length*last.length;n++){
+          const index=(start+n)%(first.length*last.length);
+          person.fn=first[Math.floor(index/last.length)];person.ln=last[index%last.length];
+          if(!names.has(personName(person))){found=true;break}
+        }
+        if(!found)throw Error('Not enough unique names for this league');
+      }
+      names.add(personName(person));
+    }
+  }
   const tendencyKeys=['dunk','floater','hook','post','twoPoint','threePoint','pumpFake','fades','pass','lob','cross','spin','step','offReb','runPlay','defReb','takeCharge','stealOnBall','stealOffBall','block'];
   const tendencyAttributes=['DNK','INS','INS','INS','MID','TPT','MID','MID','PAS','PAS','DRB','DRB','DRB','ORE','PAS','DRE','BLK','STL','STL','BLK'];
   const tendencySpread=[2,2,2,2,2,2,3,3,2,3,3,3,3,2,2,2,2,3,3,2];
@@ -155,6 +182,7 @@
   }
   function createLeague(source,data,blueprints,playerBlueprint,catalog,{seed=42,gender=source.meta?.gender||0,skillCatalog=defaultSkills}={}){
     const league=clone(source),type=league.leagueType===1?'college':'pro';
+    const names=reservedNames(source),nameRng=core.random((seed^0x85ebca6b)>>>0);
     if(![0,1].includes(league.leagueType))throw Error('Choose a Pro or College league');
     let next=Math.max(0,Number(league.meta.uPID)||0)+1;
     // Reserve identities in league personnel and any other retained records.
@@ -170,6 +198,7 @@
         const generated=create(data,blueprints,playerBlueprint,catalog,{seed:rng.int(0,0x100000000),type,gender,teamId:slot.id,firstPersonId:next,division:slot.division,skillCatalog});
         const identity=generated.team.city+' '+generated.team.name;
         if(used.has(identity))continue;
+        reserveTeamNames(generated.team,data,names,nameRng);
         used.add(identity);next=generated.nextPersonId;generated.team.rnk=slot.rnk;
         return generated.team;
       }
@@ -182,6 +211,7 @@
     if(![0,1].includes(source.leagueType))throw Error('Generation supports Pro and College leagues');
     if(!Number.isInteger(target)||target<source.teams.length||target>64)throw Error('Invalid team count');
     const league=clone(source),rng=core.random(seed),used=new Set(league.teams.map(t=>(t.city+' '+t.name).toLowerCase()));
+    const names=reservedNames(source),nameRng=core.random((seed^0x85ebca6b)>>>0);
     let next=Math.max(0,Number(league.meta?.uPID)||0)+1;
     function visit(value){
       if(!value||typeof value!=='object')return;
@@ -197,6 +227,7 @@
       for(let attempt=0;attempt<1000;attempt++){
         const result=create(data,blueprints,playerBlueprint,catalog,{seed:rng.int(0,0x100000000),type:league.leagueType===1?'college':'pro',gender:league.meta?.gender||0,teamId,firstPersonId:next,division,skillCatalog});
         const identity=(result.team.city+' '+result.team.name).toLowerCase();if(used.has(identity))continue;
+        reserveTeamNames(result.team,data,names,nameRng);
         used.add(identity);result.team.rnk=league.teams.length+1;league.teams.push(result.team);
         next=result.nextPersonId;teamId++;accepted=true;break;
       }
@@ -208,6 +239,7 @@
   function regenerateLeague(source,data,blueprints,playerBlueprint,catalog,{seed=42,gender=source.meta?.gender??0,skillCatalog=defaultSkills}={}){
     if(![0,1].includes(source.leagueType))throw Error('Generation supports Pro and College leagues');
     const league=clone(source),type=league.leagueType===1?'college':'pro',rng=core.random(seed);
+    const names=reservedNames(source),nameRng=core.random((seed^0x85ebca6b)>>>0);
     let next=Math.max(0,Number(league.meta?.uPID)||0)+1;
     function visit(value){
       if(!value||typeof value!=='object')return;
@@ -219,6 +251,7 @@
       const result=create(data,blueprints,playerBlueprint,catalog,{seed:rng.int(0,0x100000000),type,gender,teamId:oldTeam.id,firstPersonId:next,division:oldTeam.division,skillCatalog});
       next=result.nextPersonId;
       const replacement=result.team;
+      reserveTeamNames(replacement,data,names,nameRng);
       for(const key of ['isPlayer','city','name','shortName','arenaName','logoURL','tag','logoSize','location','division','rnk','teamColors','uniforms','court','draftPicks','retiredNumbers','headToHeads','scoringOptions','quickPlays','coinFlip','status','championships','following'])if(Object.hasOwn(oldTeam,key))replacement[key]=clone(oldTeam[key]);
       replacement.currentLineup=oldTeam.currentLineup||0;replacement.lineupPreset=oldTeam.lineupPreset||0;
       replacement.frontOffice={...clone(oldTeam.frontOffice||{}),staff:replacement.frontOffice.staff,announcers:replacement.frontOffice.announcers};

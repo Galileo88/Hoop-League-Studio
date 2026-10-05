@@ -2,6 +2,34 @@ const assert = require('node:assert/strict');
 const { test } = require('node:test');
 const core = require('../assets/js/generation-prototype.js');
 const data = require('../data/generation-prototype.json');
+const teams = require('../assets/js/team-generator.js');
+const blueprints = require('../data/team-generation-blueprints.json');
+const player = require('../data/player-blueprint.json');
+const appearance = require('../data/generation-appearance.json');
+
+test('league generation, regeneration and expansion reserve names across all teams and history', () => {
+  for (const leagueType of [0, 1]) {
+    const seed = 42;
+    const firstSeed = core.random(seed).int(0, 0x100000000);
+    const collision = core.generate(data, {seed:firstSeed, type:leagueType ? 'college' : 'pro'}).roster[0];
+    const source = {
+      leagueType, meta:{uPID:10000,gender:0}, divisions:['Division'],
+      teams:Array.from({length:32}, (_, i) => ({...structuredClone(blueprints.team),id:i+1,division:0,rnk:i+1,roster:[]})),
+      retirees:[{...collision,id:10000,fn:collision.fn.toUpperCase(),awards:[{id:2,league:leagueType,yearsWon:[1990]}]}]
+    };
+    const before = structuredClone(source);
+    for (const operation of ['createLeague','regenerateLeague','expandLeague']) {
+      const args = operation === 'expandLeague' ? [source,64] : [source];
+      const result = teams[operation](...args,data,blueprints,player,appearance,{seed});
+      const people = result.teams.flatMap(t => [...t.roster,...(t.frontOffice?.staff||[]),...(t.frontOffice?.announcers||[])]);
+      const names = [...people,...result.retirees].map(p => (p.fn+' '+p.ln).toLowerCase());
+      assert.equal(new Set(names).size,names.length,operation+' repeated a name');
+      assert.deepEqual(result.retirees,source.retirees,'Historical careers must stay unchanged');
+      assert.deepEqual(source,before,'Generation must not mutate the source');
+      assert.deepEqual(result,teams[operation](...args,data,blueprints,player,appearance,{seed}),'Names must be reproducible');
+    }
+  }
+});
 
 function leagueProfiles(seed, type, gender) {
   const rng = core.random(seed);
