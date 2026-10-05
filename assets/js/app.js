@@ -1010,15 +1010,6 @@ function renderSeason(parent,obj){
     };
     rosterActions.append(reset);
    }
-   const replaceStyles=el('button','','Realistic Styles');replaceStyles.type='button';
-   replaceStyles.title='Replace unapproved player hairstyles and remove unapproved head accessories using your selected styles.';
-   replaceStyles.onclick=()=>{
-    if(!canNavigate())return;
-    const result=window.HLSStylePolicy.repair(league);
-    if(result.players){dirty=true;$('#status').textContent='Unsaved changes'}
-    toast(result.players?'Replaced '+result.hairstyles+' hairstyles and removed '+result.accessories+' head accessories.':'All player styles are already allowed.');
-   };
-   rosterActions.append(replaceStyles);
    const teamStatus=el('p','',league.teams.length+' teams · '+(league.awards||[]).filter(a=>a.enabled).length+' enabled awards');teamStatus.dataset.teamCountStatus='true';panel.append(teamStatus);
   }
   button.onclick=()=>{if(!canNavigate())return;activate(index)};
