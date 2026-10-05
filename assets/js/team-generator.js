@@ -66,12 +66,28 @@
     const scale=Math.abs(value.x)>9000||Math.abs(value.y)>18000?100:1;
     return {x:Math.round(value.x/scale),y:Math.round(value.y/scale)};
   }
+  function appearanceColors(countryId,catalog,rng){
+    // Native GenerateEthnicity / GenerateSkinColor / GenerateHairColor (1.09.75).
+    // Enum values: white=0, black=1, asian=2; ranges have exclusive upper bounds.
+    const country=catalog.countries[countryId],roll=rng.int(0,100);
+    const ethnicity=!country?0:roll<country.black?1:roll<country.black+country.white?0:2;
+    let range=[0,catalog.colors.skin.length];
+    if(country){
+      switch(country.skin){
+        case 1:range=ethnicity===1?[3,7]:[0,3];break;
+        case 2:range=[2,5];break;
+        case 3:range=ethnicity===0?[0,3]:[4,7];break;
+        default:range=ethnicity===0?[0,3]:ethnicity===1?[3,7]:[0,5];
+      }
+    }
+    return {skinC:catalog.colors.skin[rng.int(...range)],hairC:catalog.colors.hair[rng.int(0,ethnicity===0?catalog.colors.hair.length:2)]};
+  }
   function appearance(person,catalog,rng){
     const available=entries=>entries.filter(entry=>(entry.gender===person.gender||entry.gender===2)&&(entry.age===2||entry.age===(person.age>=35?1:0)));
     const hair=available(catalog.hair),facial=available(catalog.facialHair);
-    const color=pick(catalog.colors.hair,rng);
-    // Valid catalog choices; native ethnicity/rarity weighting is not yet ported.
-    return {skinC:pick(catalog.colors.skin,rng),eyeC:pick(catalog.colors.eyes,rng),unibrow:rng.value()<.01,browC:color,hair:pick(hair,rng)?.id||'0000',hairC:color,fHair:person.gender===0&&rng.value()<.35?(pick(facial,rng)?.id||'0000'):'0000',fHairC:color};
+    const {skinC,hairC:color}=appearanceColors(person.ctry,catalog,rng);
+    // Hairstyle rarity and eye-color weighting are not yet ported.
+    return {skinC,eyeC:pick(catalog.colors.eyes,rng),unibrow:rng.value()<.01,browC:color,hair:pick(hair,rng)?.id||'0000',hairC:color,fHair:person.gender===0&&rng.value()<.35?(pick(facial,rng)?.id||'0000'):'0000',fHairC:color};
   }
   function suits(catalog,rng){
     return Array.from({length:4},()=>{
@@ -260,7 +276,7 @@
     league.meta||={};league.meta.uPID=next-1;league.meta.gender=gender;
     return league;
   }
-  const api={create,createLeague,expandLeague,regenerateLeague,validate,testLeague,tendencies,coachAttributes};
+  const api={create,createLeague,expandLeague,regenerateLeague,validate,testLeague,tendencies,coachAttributes,appearanceColors};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   if(typeof window!=='undefined')window.HLSTeamGenerator=api;
 })();

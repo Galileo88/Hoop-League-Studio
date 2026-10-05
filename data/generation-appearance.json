@@ -1479,5 +1479,673 @@
       "E5AE78",
       "F0D2AF"
     ]
+  },
+  "countries": {
+    "AL": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "AR": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 2
+    },
+    "AT": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "AU": {
+      "white": 92,
+      "black": 0,
+      "asian": 8,
+      "skin": 0
+    },
+    "BA": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "BB": {
+      "white": 4,
+      "black": 90,
+      "asian": 6,
+      "skin": 2
+    },
+    "BD": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 2
+    },
+    "BE": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "BG": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "BN": {
+      "white": 85,
+      "black": 0,
+      "asian": 15,
+      "skin": 1
+    },
+    "BR": {
+      "white": 50,
+      "black": 50,
+      "asian": 0,
+      "skin": 0
+    },
+    "BS": {
+      "white": 12,
+      "black": 85,
+      "asian": 3,
+      "skin": 2
+    },
+    "BY": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 2
+    },
+    "CA": {
+      "white": 70,
+      "black": 15,
+      "asian": 15,
+      "skin": 0
+    },
+    "CG": {
+      "white": 0,
+      "black": 100,
+      "asian": 0,
+      "skin": 3
+    },
+    "CH": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "CL": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "CM": {
+      "white": 0,
+      "black": 100,
+      "asian": 0,
+      "skin": 2
+    },
+    "CN": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 1
+    },
+    "CO": {
+      "white": 80,
+      "black": 20,
+      "asian": 0,
+      "skin": 0
+    },
+    "CR": {
+      "white": 96,
+      "black": 3,
+      "asian": 1,
+      "skin": 0
+    },
+    "CU": {
+      "white": 50,
+      "black": 50,
+      "asian": 0,
+      "skin": 0
+    },
+    "CY": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "CZ": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "DE": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "DK": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "DO": {
+      "white": 50,
+      "black": 50,
+      "asian": 0,
+      "skin": 0
+    },
+    "DZ": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "EC": {
+      "white": 97,
+      "black": 3,
+      "asian": 0,
+      "skin": 2
+    },
+    "EE": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "EG": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "ES": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "FI": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "FR": {
+      "white": 50,
+      "black": 50,
+      "asian": 0,
+      "skin": 0
+    },
+    "GE": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 2
+    },
+    "GH": {
+      "white": 0,
+      "black": 100,
+      "asian": 0,
+      "skin": 3
+    },
+    "GR": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "GT": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "HK": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 1
+    },
+    "HN": {
+      "white": 98,
+      "black": 2,
+      "asian": 0,
+      "skin": 0
+    },
+    "HR": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "HT": {
+      "white": 5,
+      "black": 95,
+      "asian": 0,
+      "skin": 3
+    },
+    "HU": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "ID": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 1
+    },
+    "IE": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "IL": {
+      "white": 70,
+      "black": 15,
+      "asian": 15,
+      "skin": 1
+    },
+    "IN": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 2
+    },
+    "IQ": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "IR": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "IS": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "IT": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "JM": {
+      "white": 0,
+      "black": 100,
+      "asian": 0,
+      "skin": 3
+    },
+    "JP": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 1
+    },
+    "KH": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 2
+    },
+    "KR": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 1
+    },
+    "KW": {
+      "white": 90,
+      "black": 0,
+      "asian": 10,
+      "skin": 0
+    },
+    "KY": {
+      "white": 50,
+      "black": 50,
+      "asian": 0,
+      "skin": 0
+    },
+    "KZ": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "LA": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 1
+    },
+    "LB": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "LK": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 2
+    },
+    "LT": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "LU": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "LV": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "LY": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "MA": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "MK": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 3
+    },
+    "MT": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "MX": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "MY": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 0
+    },
+    "NG": {
+      "white": 0,
+      "black": 100,
+      "asian": 0,
+      "skin": 3
+    },
+    "NI": {
+      "white": 90,
+      "black": 10,
+      "asian": 0,
+      "skin": 0
+    },
+    "NL": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "NO": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "NZ": {
+      "white": 95,
+      "black": 0,
+      "asian": 5,
+      "skin": 1
+    },
+    "PA": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "PE": {
+      "white": 97,
+      "black": 2,
+      "asian": 1,
+      "skin": 0
+    },
+    "PH": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 2
+    },
+    "PK": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 2
+    },
+    "PL": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "PR": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "PS": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "PT": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "PY": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "RO": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "RS": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "RU": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "SA": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 2
+    },
+    "SE": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "SG": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 1
+    },
+    "SI": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "SK": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "SN": {
+      "white": 0,
+      "black": 100,
+      "asian": 0,
+      "skin": 3
+    },
+    "SO": {
+      "white": 0,
+      "black": 100,
+      "asian": 0,
+      "skin": 3
+    },
+    "SV": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "SY": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 2
+    },
+    "TH": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 1
+    },
+    "TN": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "TR": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "TT": {
+      "white": 0,
+      "black": 50,
+      "asian": 50,
+      "skin": 3
+    },
+    "TW": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 1
+    },
+    "UA": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "UG": {
+      "white": 0,
+      "black": 100,
+      "asian": 0,
+      "skin": 3
+    },
+    "UK": {
+      "white": 98,
+      "black": 2,
+      "asian": 0,
+      "skin": 0
+    },
+    "US": {
+      "white": 45,
+      "black": 50,
+      "asian": 5,
+      "skin": 0
+    },
+    "UY": {
+      "white": 96,
+      "black": 4,
+      "asian": 0,
+      "skin": 1
+    },
+    "UZ": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 1
+    },
+    "VE": {
+      "white": 100,
+      "black": 0,
+      "asian": 0,
+      "skin": 0
+    },
+    "VN": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 1
+    },
+    "WS": {
+      "white": 0,
+      "black": 0,
+      "asian": 100,
+      "skin": 2
+    },
+    "ZA": {
+      "white": 10,
+      "black": 90,
+      "asian": 0,
+      "skin": 3
+    }
   }
 }

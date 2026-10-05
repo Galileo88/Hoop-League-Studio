@@ -7,6 +7,42 @@ const blueprints = require('../data/team-generation-blueprints.json');
 const player = require('../data/player-blueprint.json');
 const appearance = require('../data/generation-appearance.json');
 
+test('native US ethnicity thresholds coordinate skin and hair palettes', () => {
+  for(let roll=0;roll<100;roll++){
+    const black=roll<50,white=roll>=50&&roll<95;
+    for(const upper of [false,true]){
+      let calls=0;
+      const rng={int:(lo,hi)=>calls++===0?roll:upper?hi-1:lo};
+      const actual=teams.appearanceColors('US',appearance,rng);
+      const skin=black?(upper?6:3):white?(upper?2:0):(upper?4:0);
+      assert.deepEqual(actual,{skinC:appearance.colors.skin[skin],hairC:appearance.colors.hair[upper?(white?8:1):0]});
+    }
+  }
+});
+
+test('native country skin overrides and unknown-country fallback are preserved', () => {
+  const expected=[[[0,2],[3,6],[0,4]],[[0,2],[3,6],[0,2]],[[2,4],[2,4],[2,4]],[[0,2],[4,6],[4,6]]];
+  for(let skin=0;skin<4;skin++)for(let ethnicity=0;ethnicity<3;ethnicity++)for(const upper of [false,true]){
+    const catalog={...appearance,countries:{XX:{skin,white:ethnicity===0?100:0,black:ethnicity===1?100:0,asian:ethnicity===2?100:0}}};
+    const colors=teams.appearanceColors('XX',catalog,{int:(lo,hi)=>upper?hi-1:lo});
+    assert.equal(colors.skinC,appearance.colors.skin[expected[skin][ethnicity][upper?1:0]]);
+    assert.equal(colors.hairC,appearance.colors.hair[upper?(ethnicity===0?8:1):0]);
+  }
+  assert.deepEqual(teams.appearanceColors('unknown',appearance,{int:(lo,hi)=>hi-1}),{skinC:appearance.colors.skin[6],hairC:appearance.colors.hair[8]});
+});
+
+test('generated US players and staff use coordinated colors', () => {
+  for(let seed=0;seed<30;seed++){
+    const {team}=teams.create(data,blueprints,player,appearance,{seed,gender:seed%3});
+    for(const p of [...team.roster,...team.frontOffice.staff,...team.frontOffice.announcers]){
+      const a=p.appearance;
+      if(appearance.colors.skin.indexOf(a.skinC)>=3)assert.ok(appearance.colors.hair.indexOf(a.hairC)<2);
+      assert.equal(a.browC,a.hairC);
+      assert.equal(a.fHairC,a.hairC);
+    }
+  }
+});
+
 test('league generation, regeneration and expansion reserve names across all teams and history', () => {
   for (const leagueType of [0, 1]) {
     const seed = 42;

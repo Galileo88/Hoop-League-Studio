@@ -1,4 +1,4 @@
-const CACHE_NAME='hls-pwa-v263-roster-actions';
+const CACHE_NAME='hls-pwa-v264-appearance-colors';
 const CORE=[
   './',
   './index.html',
