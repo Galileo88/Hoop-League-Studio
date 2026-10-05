@@ -1,4 +1,4 @@
-const CACHE_NAME='hls-pwa-v264-appearance-colors';
+const CACHE_NAME='hls-pwa-v265-country-generation';
 const CORE=[
   './',
   './index.html',

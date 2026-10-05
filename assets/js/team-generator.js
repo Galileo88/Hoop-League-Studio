@@ -8,6 +8,42 @@
   const clone=value=>structuredClone(value),pick=(items,rng)=>items[rng.int(0,items.length)];
   const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
   const personName=p=>(p.fn+' '+p.ln).trim().toLowerCase();
+  function namePools(person,data){
+    const c=data.countries[person.ctry];
+    if(!c)throw Error('Unknown generation country: '+person.ctry);
+    return {first:person.gender===1&&c.ffn.length?c.ffn:c.fn,last:person.gender===1&&c.fln.length?c.fln:c.ln};
+  }
+  function randomCountry(data,meta,type,rng){
+    let entries=meta.generatedCountries||[];
+    if((meta.countryGeneration??0)===0&&!entries.length)entries=data.defaultCountries[type].map(([country,value])=>({country,value}));
+    const roll=rng.int(0,100);let total=0;
+    for(const entry of entries){total+=Number(entry.value)||0;if(roll<total)return entry.country}
+    return pick(Object.keys(data.countries),rng);
+  }
+  function assignName(person,data,names,rng){
+    const {first,last}=namePools(person,data);
+    for(let attempt=0;attempt<1000;attempt++){
+      person.fn=pick(first,rng);
+      const surnames=last.filter(n=>n!==person.fn);
+      if(!surnames.length)continue;
+      person.ln=pick(surnames,rng);
+      if(!names.has(personName(person))){names.add(personName(person));return}
+    }
+    const start=rng.int(0,first.length*last.length);
+    for(let n=0;n<first.length*last.length;n++){
+      const index=(start+n)%(first.length*last.length);
+      person.fn=first[Math.floor(index/last.length)];person.ln=last[index%last.length];
+      if(person.fn!==person.ln&&!names.has(personName(person))){names.add(personName(person));return}
+    }
+    throw Error('Not enough unique names for country '+person.ctry);
+  }
+  function identity(person,data,meta,type,names,rng){
+    person.ctry=randomCountry(data,meta,type,rng);
+    assignName(person,data,names,rng);
+    const country=data.countries[person.ctry];
+    const cities=country.states.length?pick(country.states,rng).cities:country.cities;
+    person.home='';person.loc=location(pick(cities,rng).location);
+  }
   function reservedNames(source){
     const names=new Set();
     function visit(value){
@@ -20,14 +56,13 @@
   function reserveTeamNames(team,data,names,rng){
     for(const person of [...team.roster,...team.frontOffice.staff,...team.frontOffice.announcers]){
       if(names.has(personName(person))){
-        const first=person.gender===1?data.names.femaleFirst:data.names.first;
-        const last=person.gender===1&&data.names.femaleLast.length?data.names.femaleLast:data.names.last;
+        const {first,last}=namePools(person,data);
         const start=rng.int(0,first.length*last.length);
         let found=false;
         for(let n=0;n<first.length*last.length;n++){
           const index=(start+n)%(first.length*last.length);
           person.fn=first[Math.floor(index/last.length)];person.ln=last[index%last.length];
-          if(!names.has(personName(person))){found=true;break}
+          if(person.fn!==person.ln&&!names.has(personName(person))){found=true;break}
         }
         if(!found)throw Error('Not enough unique names for this league');
       }
@@ -104,27 +139,15 @@
     const potential=roll>Math.fround(.99)?10:roll>Math.fround(.95)?9:roll>Math.fround(.65)?8:roll>Math.fround(.3)?7:roll>Math.fround(.1)?6:5;
     return [current,Math.max(current,potential)];
   }
-  function create(data,blueprints,playerBlueprint,catalog,{seed=42,type='pro',gender=0,teamId=1,firstPersonId=1,division=0,skillCatalog=defaultSkills}={}){
+  function create(data,blueprints,playerBlueprint,catalog,{seed=42,type='pro',gender=0,teamId=1,firstPersonId=1,division=0,skillCatalog=defaultSkills,meta={}}={}){
     if(!skillCatalog?.skills)throw Error('Skill catalog is required');
     for(const value of [teamId,firstPersonId])if(!Number.isSafeInteger(value)||value<1||value>2147483600)throw RangeError('IDs must be positive game integers');
     const profile=core.generate(data,{seed,type,gender});
     // A separate random stream keeps player profiles stable when other records change.
     const rng=core.random((seed^0x9e3779b9)>>>0),team=clone(blueprints.team);
     let nextId=firstPersonId;
-    const usedNames=new Set(profile.roster.map(p=>p.fn+' '+p.ln));
-    const home=person=>{
-      const city=pick(data.cities,rng);person.ctry='US';person.home='';person.loc=location(city.location);
-    };
-    const name=person=>{
-      const first=person.gender===1?data.names.femaleFirst:data.names.first;
-      const last=person.gender===1&&data.names.femaleLast.length?data.names.femaleLast:data.names.last;
-      for(let attempt=0;attempt<1000;attempt++){
-        person.fn=pick(first,rng);person.ln=pick(last,rng);
-        const full=person.fn+' '+person.ln;
-        if(!usedNames.has(full)){usedNames.add(full);return}
-      }
-      throw Error('Could not generate a unique staff name');
-    };
+    const usedNames=new Set();
+    const home=person=>identity(person,data,meta,type,usedNames,rng);
     Object.assign(team,{id:teamId,city:profile.city,name:profile.name,shortName:profile.name.replace(/[^A-Za-z]/g,'').slice(0,3).toUpperCase(),arenaName:profile.city+' Arena',tag:profile.name,division,location:location(data.cities.find(c=>c.name===profile.city).location)});
     team.teamColors=pick([['154FA1','FADE73','FFFFFF'],['C22E3A','DBE0E7','141020'],['306943','F5AB44','FFFFFF'],['7E3E85','FADE73','FFFFFF']],rng).slice();
     team.court.baseline1=team.city.toUpperCase();team.court.baseline2=team.name.toUpperCase();
@@ -154,7 +177,7 @@
         p.attributes=Object.fromEntries(['development','motivation','leadership'].map((key,i)=>[key,values[i]]));
         Object.assign(p,core.dimensions(rng.int(0,9),p.gender,rng));
       }
-      name(p);home(p);p.appearance=appearance(p,catalog,rng);p.suits=suits(catalog,rng);
+      home(p);p.appearance=appearance(p,catalog,rng);p.suits=suits(catalog,rng);
       return p;
     }
     team.frontOffice.staff=[staff(1,true),staff(2),staff(3),staff(4)];
@@ -211,7 +234,7 @@
     const rng=core.random(seed),used=new Set();
     league.teams=league.teams.map(slot=>{
       for(let attempt=0;attempt<1000;attempt++){
-        const generated=create(data,blueprints,playerBlueprint,catalog,{seed:rng.int(0,0x100000000),type,gender,teamId:slot.id,firstPersonId:next,division:slot.division,skillCatalog});
+        const generated=create(data,blueprints,playerBlueprint,catalog,{seed:rng.int(0,0x100000000),type,gender,teamId:slot.id,firstPersonId:next,division:slot.division,skillCatalog,meta:league.meta});
         const identity=generated.team.city+' '+generated.team.name;
         if(used.has(identity))continue;
         reserveTeamNames(generated.team,data,names,nameRng);
@@ -241,7 +264,7 @@
       for(const team of league.teams)if(team.division>=0&&team.division<totals.length)totals[team.division]++;
       const division=totals.indexOf(Math.min(...totals));let accepted=false;
       for(let attempt=0;attempt<1000;attempt++){
-        const result=create(data,blueprints,playerBlueprint,catalog,{seed:rng.int(0,0x100000000),type:league.leagueType===1?'college':'pro',gender:league.meta?.gender||0,teamId,firstPersonId:next,division,skillCatalog});
+        const result=create(data,blueprints,playerBlueprint,catalog,{seed:rng.int(0,0x100000000),type:league.leagueType===1?'college':'pro',gender:league.meta?.gender||0,teamId,firstPersonId:next,division,skillCatalog,meta:league.meta});
         const identity=(result.team.city+' '+result.team.name).toLowerCase();if(used.has(identity))continue;
         reserveTeamNames(result.team,data,names,nameRng);
         used.add(identity);result.team.rnk=league.teams.length+1;league.teams.push(result.team);
@@ -264,7 +287,7 @@
     }
     visit(league);
     league.teams=league.teams.map(oldTeam=>{
-      const result=create(data,blueprints,playerBlueprint,catalog,{seed:rng.int(0,0x100000000),type,gender,teamId:oldTeam.id,firstPersonId:next,division:oldTeam.division,skillCatalog});
+      const result=create(data,blueprints,playerBlueprint,catalog,{seed:rng.int(0,0x100000000),type,gender,teamId:oldTeam.id,firstPersonId:next,division:oldTeam.division,skillCatalog,meta:league.meta});
       next=result.nextPersonId;
       const replacement=result.team;
       reserveTeamNames(replacement,data,names,nameRng);
@@ -276,7 +299,7 @@
     league.meta||={};league.meta.uPID=next-1;league.meta.gender=gender;
     return league;
   }
-  const api={create,createLeague,expandLeague,regenerateLeague,validate,testLeague,tendencies,coachAttributes,appearanceColors};
+  const api={create,createLeague,expandLeague,regenerateLeague,validate,testLeague,tendencies,coachAttributes,appearanceColors,randomCountry,namePools,identity};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   if(typeof window!=='undefined')window.HLSTeamGenerator=api;
 })();

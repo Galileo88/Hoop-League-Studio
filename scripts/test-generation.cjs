@@ -33,13 +33,49 @@ test('native country skin overrides and unknown-country fallback are preserved',
 
 test('generated US players and staff use coordinated colors', () => {
   for(let seed=0;seed<30;seed++){
-    const {team}=teams.create(data,blueprints,player,appearance,{seed,gender:seed%3});
+    const {team}=teams.create(data,blueprints,player,appearance,{seed,gender:seed%3,meta:{generatedCountries:[{country:'US',value:100}]}});
     for(const p of [...team.roster,...team.frontOffice.staff,...team.frontOffice.announcers]){
       const a=p.appearance;
       if(appearance.colors.skin.indexOf(a.skinC)>=3)assert.ok(appearance.colors.hair.indexOf(a.hairC)<2);
       assert.equal(a.browC,a.hairC);
       assert.equal(a.fHairC,a.hairC);
     }
+  }
+});
+
+test('country percentages preserve unassigned random-country probability and empty defaults',()=>{
+  const meta={generatedCountries:[{country:'FR',value:25},{country:'JP',value:25}]};
+  for(const [roll,expected] of [[0,'FR'],[24,'FR'],[25,'JP'],[49,'JP'],[50,'AL'],[99,'AL']]){
+    let n=0;assert.equal(teams.randomCountry(data,meta,'pro',{int:()=>n++?0:roll}),expected);
+  }
+  assert.equal(teams.randomCountry(data,{},'pro',{int:()=>74}),'US');
+  assert.equal(teams.randomCountry(data,{},'college',{int:()=>89}),'US');
+  assert.equal(teams.randomCountry(data,{countryGeneration:1,generatedCountries:[]},'pro',{int:()=>0}),'AL');
+});
+
+test('all countries generate matching gender names and hometowns',()=>{
+  for(const [code,country] of Object.entries(data.countries))for(const gender of [0,1]){
+    const p={gender};teams.identity(p,data,{generatedCountries:[{country:code,value:100}]},'pro',new Set(),core.random(42));
+    const {first,last}=teams.namePools(p,data);
+    assert.ok(first.includes(p.fn)&&last.includes(p.ln),code);
+    assert.notEqual(p.fn,p.ln);assert.equal(p.ctry,code);
+    const cities=country.states.length?country.states.flatMap(s=>s.cities):country.cities;
+    assert.ok(cities.some(c=>{const scale=Math.abs(c.location.x)>9000||Math.abs(c.location.y)>18000?100:1;return Math.round(c.location.x/scale)===p.loc.x&&Math.round(c.location.y/scale)===p.loc.y}),code);
+  }
+});
+
+test('create, regenerate and expand honor league countries and preserve existing records',()=>{
+  const source={leagueType:0,meta:{uPID:100,gender:1,generatedCountries:[{country:'JP',value:100}]},divisions:['Division'],teams:[{...structuredClone(blueprints.team),id:1,division:0,rnk:1,roster:[]}]};
+  const before=structuredClone(source);
+  for(const operation of ['createLeague','regenerateLeague','expandLeague']){
+    const args=operation==='expandLeague'?[source,3]:[source];
+    const result=teams[operation](...args,data,blueprints,player,appearance,{seed:42});
+    const generated=operation==='expandLeague'?result.teams.slice(1):result.teams;
+    for(const t of generated)for(const p of [...t.roster,...t.frontOffice.staff,...t.frontOffice.announcers]){
+      assert.equal(p.ctry,'JP');const {first,last}=teams.namePools(p,data);assert.ok(first.includes(p.fn)&&last.includes(p.ln));
+    }
+    if(operation==='expandLeague')assert.deepEqual(result.teams[0],source.teams[0]);
+    assert.deepEqual(source,before);
   }
 });
 
