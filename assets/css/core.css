@@ -1312,13 +1312,13 @@ body.workspace-home header>.actions>:not(.mobile-menu-toggle){
 }
 
 
-.season-regenerate{margin-top:20px}
+.season-roster-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:20px}
 
 @media(max-width:560px){
   .season-gender-fields{
     margin-top:16px;
   }
-  .season-regenerate{margin-top:14px}
+  .season-roster-actions{margin-top:14px}
 }
 
 

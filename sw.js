@@ -1,4 +1,4 @@
-const CACHE_NAME='hls-pwa-v263-college-awards';
+const CACHE_NAME='hls-pwa-v263-roster-actions';
 const CORE=[
   './',
   './index.html',

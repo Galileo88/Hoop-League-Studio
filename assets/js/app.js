@@ -924,6 +924,14 @@ function renderTeamRetiredNumbers(parent,team,path){
  const draw=()=>{const entries=Array.isArray(team.retiredNumbers)?team.retiredNumbers:[],leagueNumbers=globalNumbers();summary.textContent='Retired Numbers · '+entries.length;help.textContent=leagueNumbers.size?'League-wide retired numbers are read-only here. Search by player name to auto-fill the player ID, jersey number, and retirement year.':'Add a retired number for this team. Search by player name to auto-fill the player ID, jersey number, and retirement year.';list.replaceChildren();if(!entries.length)list.append(el('p','retired-number-empty','No retired numbers for this team.'));for(const [index,entry]of entries.entries()){const locked=leagueNumbers.has(retiredNumberInteger(entry.num));renderRetiredNumberRow(list,entry,index,entries,'team-'+team.id,(key,value)=>{if(locked)return false;if(key==='num'&&entries.some((candidate,i)=>i!==index&&retiredNumberInteger(candidate.num)===value)){toast('That number is already retired for this team.');return false}set([...path,index,key],value)},()=>{if(locked)return;set(path,entries.filter((_,i)=>i!==index));draw()},locked,player=>{if(locked)return false;const number=retiredNumberPlayerNumber(player);if(number!==null&&entries.some((candidate,i)=>i!==index&&retiredNumberInteger(candidate.num)===number)){toast('That player jersey number is already retired for this team.');return false}const next=entries.map((candidate,i)=>i===index?{...candidate,pid:player.id,num:number===null?candidate.num:number,yr:player.yearRetired||retiredNumberInteger(candidate.yr)||defaultRetiredNumberYear()}:candidate);set(path,next);draw();return true})}};
  add.onclick=()=>{const entries=Array.isArray(team.retiredNumbers)?team.retiredNumbers:[],allNumbers=[...entries,...leagueRetiredNumbers()],next=[...entries,{num:nextRetiredNumber(allNumbers),pid:0,yr:defaultRetiredNumberYear()}];set(path,next);section.open=true;draw()};draw();
 }
+function resetLeagueYearsPro(data){
+ if(data.leagueType!==0)return 0;
+ const players=[...(data.teams||[]),...(data.starTeams||[])].flatMap(team=>team.roster||[]);
+ for(const key of ['freeAgents','draftClass','retirees','hallOfFame','threePointContestants'])players.push(...(data[key]||[]));
+ let changed=0;
+ for(const player of new Set(players))if(player.yrs!==0){player.yrs=0;changed++}
+ return changed;
+}
 const seasonGroups={
  General:['startingYear','totalGames','divisionGames','conferenceGames','nonConferenceGames'],
  Advanced:['injuryProbability','HOFbar','simulationPace','progressionRate','ageAppearance','cpuTrading','generatedFreeAgents','hidePotential'],
@@ -990,7 +998,18 @@ function renderSeason(parent,obj){
     regenerate.disabled=true;$('#status').textContent='Regenerating rosters and personnel…';
     try{const next=await regenerateLeagueRosters();load(next,true);render();toast('Generated new rosters and personnel for all '+next.teams.length+' teams.')}catch(error){toast(error.message);alert(error.message)}finally{regenerate.disabled=false}
    };
-   panel.append(regenerate);
+   const rosterActions=el('div','season-roster-actions');rosterActions.append(regenerate);panel.append(rosterActions);
+   if(league.leagueType===0){
+    const reset=el('button','season-reset-years-pro','Reset Years Pro');reset.type='button';
+    reset.title='Set every player’s Years Pro to 0. Ages, ratings, stats, and awards stay unchanged.';
+    reset.onclick=()=>{
+     if(!canNavigate())return;
+     const changed=resetLeagueYearsPro(league);
+     if(changed){dirty=true;$('#status').textContent='Unsaved changes'}
+     toast(changed?'Reset all player Years Pro values to 0.':'All player Years Pro values are already 0.');
+    };
+    rosterActions.append(reset);
+   }
    const teamStatus=el('p','',league.teams.length+' teams · '+(league.awards||[]).filter(a=>a.enabled).length+' enabled awards');teamStatus.dataset.teamCountStatus='true';panel.append(teamStatus);
   }
   button.onclick=()=>{if(!canNavigate())return;activate(index)};
