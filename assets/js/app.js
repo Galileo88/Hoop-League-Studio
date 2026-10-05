@@ -417,12 +417,12 @@ function removalCandidates(amount){
 }
 async function setLeagueTeamCount(requested){
  if(teamCountBusy)return false;
- const current=league.teams.length,target=Math.max(4,Math.min(64,Math.round(Number(requested))));
+ const current=league.teams.length,target=Math.max(4,Math.min(128,Math.round(Number(requested))));
  if(!Number.isFinite(target)||target===current)return false;
- let next=league.teams.slice(),generated=0;
+ let next=league.teams.slice(),generated=0,generatedPersonnel=0;
  if(target>current){
   teamCountBusy=true;syncTeamCountDisplays();$('#status').textContent='Generating expansion teams, players, and staff…';
-  const originalTeams=league.teams,originalUPID=league.meta?.uPID;let generatedPersonnel=0;
+  const originalTeams=league.teams,originalUPID=league.meta?.uPID;
   try{
    const [data,blueprints,player,appearance,skillCatalog]=await loadGenerationAssets();
    const expanded=window.HLSTeamGenerator.expandLeague(league,target,data,blueprints,player,appearance,{seed:crypto.getRandomValues(new Uint32Array(1))[0],skillCatalog});
@@ -444,7 +444,7 @@ async function setLeagueTeamCount(requested){
 }
 function syncTeamCountDisplays(){
  syncTeamCountMeta();
- for(const input of document.querySelectorAll('[data-team-count]')){input.value=String(league.teams.length);input.disabled=teamCountBusy;const row=input.closest('.number-control');if(row){const buttons=row.querySelectorAll('button');if(buttons[0])buttons[0].disabled=teamCountBusy||league.teams.length<=4;if(buttons[1])buttons[1].disabled=teamCountBusy||league.teams.length>=64;}}
+ for(const input of document.querySelectorAll('[data-team-count]')){input.value=String(league.teams.length);input.disabled=teamCountBusy;const row=input.closest('.number-control');if(row){const buttons=row.querySelectorAll('button');if(buttons[0])buttons[0].disabled=teamCountBusy||league.teams.length<=4;if(buttons[1])buttons[1].disabled=teamCountBusy||league.teams.length>=128;}}
  for(const status of document.querySelectorAll('[data-team-count-status]'))status.textContent=league.teams.length+' teams · '+(league.awards||[]).filter(a=>a.enabled).length+' enabled awards';
  const subtitle=$('#subtitle');if(subtitle&&view==='league')subtitle.textContent=league.leagueType===1?`${league.teams.length} teams · ${league.divisions.length} conferences`:`${league.teams.length} teams · ${league.conferences.length} conferences · ${league.divisions.length} divisions`;
  listTeams();
@@ -453,8 +453,8 @@ function syncTeamCountDisplays(){
 }
 function renderTeamCountControl(parent){
  const wrap=el('div','field team-count-field'),row=el('div','number-control'),input=el('input'),minus=el('button','','−'),plus=el('button','','+');
- wrap.append(el('span','','Total Teams'));input.type='number';input.min='4';input.max='64';input.step='1';input.value=league.teams.length;input.dataset.teamCount='true';input.setAttribute('aria-label','Total Teams');minus.type=plus.type='button';minus.setAttribute('aria-label','Remove one team');plus.setAttribute('aria-label','Add one team');
- const sync=()=>{input.value=String(league.teams.length);input.disabled=teamCountBusy;minus.disabled=teamCountBusy||league.teams.length<=4;plus.disabled=teamCountBusy||league.teams.length>=64};
+ wrap.append(el('span','','Total Teams'));input.type='number';input.min='4';input.max='128';input.step='1';input.value=league.teams.length;input.dataset.teamCount='true';input.setAttribute('aria-label','Total Teams');minus.type=plus.type='button';minus.setAttribute('aria-label','Remove one team');plus.setAttribute('aria-label','Add one team');
+ const sync=()=>{input.value=String(league.teams.length);input.disabled=teamCountBusy;minus.disabled=teamCountBusy||league.teams.length<=4;plus.disabled=teamCountBusy||league.teams.length>=128};
  minus.onclick=async()=>{if(!canNavigate())return;if(!(await setLeagueTeamCount(league.teams.length-1)))sync()};plus.onclick=async()=>{if(!canNavigate())return;if(!(await setLeagueTeamCount(league.teams.length+1)))sync()};input.onchange=async()=>{if(!canNavigate()){sync();return}if(!(await setLeagueTeamCount(input.value)))sync()};input.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();input.blur()}};
  row.append(minus,input,plus);wrap.append(row);parent.append(wrap);sync();return wrap;
 }
@@ -2293,7 +2293,7 @@ function renderArchive(){
  search.oninput=group.onchange=kind.onchange=draw;draw();
 }
 function saveFile(name,text){const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=el('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
-function validate(data){if(!data||typeof data!=='object'||Array.isArray(data)||typeof data.leagueName!=='string'||!Array.isArray(data.teams)||!data.teams.length||!Array.isArray(data.conferences)||!Array.isArray(data.divisions))throw Error('Choose a Hoopland league file with a league name, teams, conferences and divisions.');if(data.teams.some(t=>!t||typeof t!=='object'||Array.isArray(t)))throw Error('The file contains an invalid team.');if(data.teams.length>64)throw Error('This editor supports a maximum of 64 league teams.');return data}
+function validate(data){if(!data||typeof data!=='object'||Array.isArray(data)||typeof data.leagueName!=='string'||!Array.isArray(data.teams)||!data.teams.length||!Array.isArray(data.conferences)||!Array.isArray(data.divisions))throw Error('Choose a Hoopland league file with a league name, teams, conferences and divisions.');if(data.teams.some(t=>!t||typeof t!=='object'||Array.isArray(t)))throw Error('The file contains an invalid team.');if(data.teams.length>128)throw Error('This editor supports a maximum of 128 league teams.');return data}
 function importLeagueText(text){
  let data;try{data=JSON.parse(text.replace(/^\uFEFF/,''))}catch{throw Error('This file is not valid league JSON. Choose a Hoop Land .txt or .json league file.')}
  data=validate(data);inferImportedSliderPresets(data);

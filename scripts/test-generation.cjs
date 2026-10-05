@@ -110,6 +110,23 @@ function leagueProfiles(seed, type, gender) {
   ).flat();
 }
 
+test('Pro and College expansion support 128 teams with unique identities and complete rosters',()=>{
+  for(const leagueType of [0,1]){
+    const source={leagueType,meta:{uPID:0,gender:0},divisions:['A','B','C','D'],teams:[]};
+    const expanded=teams.expandLeague(source,128,data,blueprints,player,appearance,{seed:42});
+    assert.equal(expanded.teams.length,128);
+    assert.equal(expanded.meta.teams,128);
+    assert.equal(new Set(expanded.teams.map(t=>t.id)).size,128);
+    assert.equal(new Set(expanded.teams.map(t=>(t.city+' '+t.name).toLowerCase())).size,128);
+    const people=expanded.teams.flatMap(t=>[...t.roster,...t.frontOffice.staff,...t.frontOffice.announcers]);
+    assert.equal(new Set(people.map(p=>p.id)).size,people.length);
+    assert.ok(expanded.meta.uPID>=Math.max(...people.map(p=>p.id)));
+    for(const team of expanded.teams)assert.equal(teams.validate(team),true);
+    assert.deepEqual(source.teams,[]);
+    assert.throws(()=>teams.expandLeague(expanded,129,data,blueprints,player,appearance),/Invalid team count/);
+  }
+});
+
 test('team seeds do not produce overlapping player profiles', () => {
   for (const seed of [0, 1, 42, 123456789, 0xffffffff]) {
     for (const type of ['pro', 'college']) {

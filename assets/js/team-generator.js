@@ -248,7 +248,7 @@
   }
   function expandLeague(source,target,data,blueprints,playerBlueprint,catalog,{seed=42,skillCatalog=defaultSkills}={}){
     if(![0,1].includes(source.leagueType))throw Error('Generation supports Pro and College leagues');
-    if(!Number.isInteger(target)||target<source.teams.length||target>64)throw Error('Invalid team count');
+    if(!Number.isInteger(target)||target<source.teams.length||target>128)throw Error('Invalid team count');
     const league=clone(source),rng=core.random(seed),used=new Set(league.teams.map(t=>(t.city+' '+t.name).toLowerCase()));
     const names=reservedNames(source),nameRng=core.random((seed^0x85ebca6b)>>>0);
     let next=Math.max(0,Number(league.meta?.uPID)||0)+1;
