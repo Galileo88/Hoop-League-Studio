@@ -1,4 +1,4 @@
-const CACHE_NAME='hls-pwa-v267-128-teams';
+const CACHE_NAME='hls-pwa-v268-commissioner';
 const CORE=[
   './',
   './index.html',

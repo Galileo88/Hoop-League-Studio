@@ -960,8 +960,8 @@ const seasonGroups={
  Draft:['lotteryTeams','lotteryOdds','fantasyDraft'],
  Playoffs:['playoffTeams','seriesLength','playInTournament'],
  Salary:['salaryCap','maxContract'],
- Optimization:[],
- Commissioner:['cpuRosterChanges','cpuTradeBlock','cpuProgression','overrideCPU','autoTradeApproval','injuries','regression']
+ Commissioner:['cpuRosterChanges','cpuTradeBlock','cpuProgression','overrideCPU','autoTradeApproval','injuries','regression'],
+ Optimization:[]
 };
 // Hoop Land: SeasonPlayoffs.GetTotalTeams and SeriesLength use these five bracket sizes.
 function playoffRoundCount(total){return total>32?6:total>16?5:total>8?4:total>4?3:2}
@@ -1017,7 +1017,7 @@ function renderSeason(parent,obj){
   renderObject(panel,subset,path,0,true);
  }
  for(const [title,keys]of Object.entries(seasonGroups)){
-  if(title==='Commissioner'||(league.leagueType===1&&['Draft','Salary'].includes(title)))continue;
+  if(league.leagueType===1&&['Draft','Salary'].includes(title))continue;
   const index=tabs.length,button=el('button','',league.leagueType===1&&title==='Playoffs'?'Tournament':title),panel=el('div','season-panel');
   button.type='button';button.id='season-tab-'+index;button.setAttribute('role','tab');button.setAttribute('aria-controls','season-panel-'+index);
   panel.id='season-panel-'+index;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',button.id);
@@ -1025,6 +1025,8 @@ function renderSeason(parent,obj){
   if(title==='Game Setup')renderObject(panel,league.settings||{},['settings']);
   else if(title==='Playoffs')renderPlayoffs(panel);
   else if(title==='Draft')renderDraft(panel,obj);
+  // Hoop Land hides Auto Trade Approval for College; the other Commissioner toggles are shared.
+  else if(title==='Commissioner')drawFields(panel,obj,league.leagueType===1?keys.filter(key=>key!=='autoTradeApproval'):keys,['season']);
   else if(title==='Salary'){const capFields=el('div','fields');panel.append(capFields);if(Object.hasOwn(obj,'salaryCap'))field(capFields,'salaryCap',obj.salaryCap,['season','salaryCap']);panel.append(el('h3','salary-max-heading','Max Contract'));const maxFields=el('div','fields salary-max-fields');panel.append(maxFields);for(const [i,value]of (obj.maxContract||[]).entries())field(maxFields,String(i),value,['season','maxContract',i])}
   else if(title==='Optimization'){const preset=el('div','fields');panel.append(preset);if(Object.hasOwn(obj,'optimization'))field(preset,'optimization',obj.optimization,['season','optimization']);renderOptimization(panel)}
   else if(title==='General'){drawFields(panel,obj,keys,['season']);const generalFields=panel.querySelector(':scope > .fields');if(generalFields){const teamCount=renderTeamCountControl(generalFields);generalFields.insertBefore(teamCount,generalFields.children[1]||null)}}
