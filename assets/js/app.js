@@ -2337,6 +2337,7 @@ function openLeagueImport(){
 // HoopWire tells leagues apart by a lasting ID kept in the commissioner's tag, which Hoop Land carries through its saves.
 // A league gets its ID once, the first time Studio opens it, and keeps it on every export.
 function ensureLeagueId(data){
+ if(data&&data.commissioner==null)data.commissioner=structuredClone(standaloneSample.commissioner);
  const commissioner=data?.commissioner;if(!commissioner||typeof commissioner!=='object'||Array.isArray(commissioner))return;
  if(/^hoopwire:hw-[a-z0-9]+$/i.test(String(commissioner.tag??'')))return;
  commissioner.tag='hoopwire:hw-'+[...crypto.getRandomValues(new Uint8Array(6))].map(byte=>byte.toString(16).padStart(2,'0')).join('');
@@ -2365,7 +2366,7 @@ async function openDraftSlots(mode){
  try{if(mode==='save'){
  const owner=league,record=draftSnapshot(),snapshot=JSON.stringify(record.league);await draftStore('readwrite',record,slot);activeDraftSlot=slot;if(league===owner&&JSON.stringify(league)===snapshot){dirty=false;$('#status').textContent='Saved to slot '+(slot+1)}toast('Progress saved to slot '+(slot+1));
  }else{
- const restored=validate(structuredClone(record.league));archiveSources=structuredClone(record.archiveSources||(record.archiveSource?.repository?[record.archiveSource]:[]));localAssets=structuredClone(record.localAssets||[]).map(a=>({...a,url:a.url||a.local}));archiveSource=structuredClone(record.archiveSource||{repository:'',branch:'main',folders:[]});assets=[...localAssets];syncArchiveList();lotteryModes.set(restored,{teams:record.lotteryMode?.teams===true,odds:record.lotteryMode?.odds===true});load(restored);activeDraftSlot=slot;if(record.league.commissioner&&record.league.commissioner.tag!==league.commissioner?.tag){const saved=structuredClone(record);saved.league.commissioner.tag=league.commissioner.tag;void draftStore('readwrite',saved,slot).catch(()=>{})}$('#status').textContent='Restored slot '+(slot+1)+(dirty?' · Unsaved changes':'');void refreshArchive(true);toast('Saved league restored.');
+ const restored=validate(structuredClone(record.league));archiveSources=structuredClone(record.archiveSources||(record.archiveSource?.repository?[record.archiveSource]:[]));localAssets=structuredClone(record.localAssets||[]).map(a=>({...a,url:a.url||a.local}));archiveSource=structuredClone(record.archiveSource||{repository:'',branch:'main',folders:[]});assets=[...localAssets];syncArchiveList();lotteryModes.set(restored,{teams:record.lotteryMode?.teams===true,odds:record.lotteryMode?.odds===true});load(restored);activeDraftSlot=slot;if(league.commissioner&&record.league.commissioner?.tag!==league.commissioner.tag){const saved=structuredClone(record);saved.league.commissioner={...saved.league.commissioner||structuredClone(league.commissioner),tag:league.commissioner.tag};void draftStore('readwrite',saved,slot).catch(()=>{})}$('#status').textContent='Restored slot '+(slot+1)+(dirty?' · Unsaved changes':'');void refreshArchive(true);toast('Saved league restored.');
  }dialog.close();
  }catch(error){message.textContent='Could not '+mode+' progress: '+error.message;for(const [i,row]of [...list.children].entries()){row.children[0].disabled=mode==='restore'&&!records[i];if(row.children[1])row.children[1].disabled=false}}finally{busy=false;close.disabled=false}
  };
